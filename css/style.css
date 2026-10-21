@@ -123,7 +123,22 @@ img,svg{max-width:100%}
 .foot p{margin:0;max-width:36ch;font-size:15px}
 .foot .brand{color:#fff;margin-bottom:10px}
 
+/* landing */
+a.btn{display:inline-block;text-decoration:none}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 24px}
+.demo{margin-top:2px}
+.demo .gauge{margin-top:36px}
+.demo-top,.demo-bot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--mut)}
+.demo-top strong{color:var(--ink);font-family:var(--display);font-size:1.05rem;letter-spacing:-.01em}
+.demo-bot{margin-top:10px}
+.demo-bot b{color:var(--ink)}
+.demo-bot .fits{color:var(--ok);font-weight:700}
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:0;padding:24px 0 0;list-style:none;border-top:2px solid var(--ink)}
+.points b{font-family:var(--display);font-size:1.18rem;letter-spacing:-.015em;display:block;margin-bottom:5px}
+.points p{margin:0;color:var(--mut);font-size:15px}
+
 @media (max-width:760px){
+  .points{grid-template-columns:1fr}
   .top .wrap{gap:12px}
   .hero{padding-top:36px}
   .file{grid-template-columns:64px 1fr}
