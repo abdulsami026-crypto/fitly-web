@@ -26,19 +26,39 @@
 
 <div class="wrap">
   <section class="hero">
-    <h1>File tools that never upload your files.</h1>
+    <h1>File tools that <span class="hl">never upload</span> your files.</h1>
     <p class="lede">Resize a photo to the exact KB a form demands. Convert an image. Turn photos into a PDF. Make a QR code. Count the words. Everything runs inside your browser, so your files never leave your device.</p>
     <div class="cta-row">
       <a class="btn" href="image-resizer/">Resize a photo</a>
       <a class="btn ghost" href="#tools">Browse all tools</a>
     </div>
     <ul class="chips" aria-label="Popular size limits"><li><a href="resize-image-to-20kb/">20 KB</a></li><li><a href="resize-image-to-50kb/">50 KB</a></li><li><a href="resize-image-to-100kb/">100 KB</a></li><li><a href="resize-image-to-200kb/">200 KB</a></li><li><a href="resize-image-to-500kb/">500 KB</a></li><li><a href="image-resizer/">1 MB</a></li></ul>
-    <div class="panel demo">
-      <div class="demo-top"><strong>photo.jpg</strong><span>9.2 MB</span></div>
-      <div class="gauge" aria-hidden="true"><i class="g-old" style="width:100%"></i><i class="g-new" style="width:18%"></i><span class="g-lim" style="left:21%" data-l="limit 200 KB"></span></div>
-      <div class="demo-bot"><span><b>187 KB</b> · <span class="fits">fits</span></span><span>Full picture kept, nothing cropped</span></div>
+
+    <div class="panel show" aria-hidden="true">
+      <div class="show-bar"><i></i><i></i><i class="on"></i><span>Fitly · Image resizer</span></div>
+      <div class="show-body">
+        <div class="file">
+          <span class="thumb"><svg viewBox="0 0 88 66" width="88" height="66"><rect width="88" height="66" fill="#b9cdf5"/><circle cx="66" cy="16" r="8" fill="#c9f26b"/><path d="M0 52 L26 26 L44 44 L58 30 L88 54 L88 66 L0 66 Z" fill="#3b3bf2" opacity=".55"/><path d="M0 58 L30 36 L52 52 L70 40 L88 56 L88 66 L0 66 Z" fill="#0e1a2b" opacity=".65"/></svg></span>
+          <div>
+            <div class="nm">photo.jpg</div>
+            <div class="gauge"><i class="g-old" style="width:100%"></i><i class="g-new" style="width:18%"></i><span class="g-lim" style="left:21%" data-l="limit 200 KB"></span></div>
+            <div class="mt"><b>187 KB</b> <span class="good">fits</span> · 1528 × 1146px (was 4000 × 3000) · quality 92%</div>
+          </div>
+          <div class="acts"><span class="btn ghost">Download</span></div>
+        </div>
+        <div class="file">
+          <span class="thumb"><svg viewBox="0 0 88 66" width="88" height="66"><rect width="88" height="66" fill="#eef1f7"/><rect x="26" y="8" width="36" height="50" rx="3" fill="#fff" stroke="#dde2ec"/><circle cx="44" cy="26" r="7" fill="#3b3bf2"/><path d="M33 50c2-7 6-10 11-10s9 3 11 10z" fill="#0e1a2b" opacity=".7"/></svg></span>
+          <div>
+            <div class="nm">id-photo.png</div>
+            <div class="gauge"><i class="g-old" style="width:62%"></i><i class="g-new" style="width:9%"></i><span class="g-lim" style="left:11%" data-l="limit 50 KB"></span></div>
+            <div class="mt"><b>48 KB</b> <span class="good">fits</span> · 800 × 1000px (was 1200 × 1500) · quality 88%</div>
+          </div>
+          <div class="acts"><span class="btn ghost">Download</span></div>
+        </div>
+        <div class="show-foot"><span>2 photos fitted</span><span class="btn">Download all as ZIP</span></div>
+      </div>
     </div>
-    <p class="hint">That is how the resizer shows every result: where your photo started, where it landed, and the limit it had to fit.</p>
+    <p class="hint">An example of the resizer at work. Every result shows where the photo started, where it landed, and the limit it had to fit.</p>
     <p class="facts"><b>5</b> tools · <b>6</b> size limits · <b>0</b> uploads · <b>0</b> sign-ups</p>
   </section>
 
@@ -52,7 +72,19 @@
 
   <section class="sec" id="tools">
     <h2>Tools for everyday files</h2>
-    <ul class="tools"><li><a href="image-resizer/"><span class="t">Image resizer</span><span class="d">Get any photo under an exact limit, from 20 KB to 1 MB, with the full frame kept. Made for application forms, job portals and websites that reject big files.</span><span class="o">JPG · WebP</span></a></li><li><a href="image-converter/"><span class="t">Image converter</span><span class="d">Change images between JPG, PNG and WebP, one at a time or in a batch, and download them all in one ZIP file.</span><span class="o">JPG · PNG · WebP</span></a></li><li><a href="image-to-pdf/"><span class="t">Images to PDF</span><span class="d">Put photos into one tidy PDF, in the order you choose, on A4, Letter, or the size of the image itself.</span><span class="o">PDF</span></a></li><li><a href="qr-code-generator/"><span class="t">QR code generator</span><span class="d">Make a QR code for a link, a piece of text, or your Wi-Fi, and download it as a PNG or a crisp SVG for print.</span><span class="o">PNG · SVG</span></a></li><li><a href="word-counter/"><span class="t">Word counter</span><span class="d">Count words, characters and sentences as you type, and see the reading time. Handy for essays, forms and posts.</span><span class="o">Text</span></a></li></ul>
+    <ul class="tools"><li><a href="image-resizer/"><span class="n">01</span><span class="t">Image resizer</span><span class="d">Get any photo under an exact limit, from 20 KB to 1 MB, with the full frame kept. Made for application forms, job portals and websites that reject big files.</span><span class="o">JPG · WebP</span></a></li><li><a href="image-converter/"><span class="n">02</span><span class="t">Image converter</span><span class="d">Change images between JPG, PNG and WebP, one at a time or in a batch, and download them all in one ZIP file.</span><span class="o">JPG · PNG · WebP</span></a></li><li><a href="image-to-pdf/"><span class="n">03</span><span class="t">Images to PDF</span><span class="d">Put photos into one tidy PDF, in the order you choose, on A4, Letter, or the size of the image itself.</span><span class="o">PDF</span></a></li><li><a href="qr-code-generator/"><span class="n">04</span><span class="t">QR code generator</span><span class="d">Make a QR code for a link, a piece of text, or your Wi-Fi, and download it as a PNG or a crisp SVG for print.</span><span class="o">PNG · SVG</span></a></li><li><a href="word-counter/"><span class="n">05</span><span class="t">Word counter</span><span class="d">Count words, characters and sentences as you type, and see the reading time. Handy for essays, forms and posts.</span><span class="o">Text</span></a></li></ul>
+  </section>
+
+  <section class="sec">
+    <h2>Fitly vs upload tools</h2>
+    <p class="lede" style="font-size:1rem;margin-bottom:20px">A fair look at how most upload-based tools work, and how Fitly is different.</p>
+    <div class="cmp">
+      <div class="cmp-row head"><span></span><span>Upload tools</span><span class="me">Fitly</span></div>
+      <div class="cmp-row"><span class="k">Your files</span><span>Sent to their server</span><span class="me">Never leave your device</span></div>
+      <div class="cmp-row"><span class="k">Internet</span><span>Needed from start to finish</span><span class="me">Works offline after the first visit</span></div>
+      <div class="cmp-row"><span class="k">Your photo</span><span>Sometimes trimmed to fit</span><span class="me">Never cropped, full picture kept</span></div>
+      <div class="cmp-row"><span class="k">The catch</span><span>Watermarks or paid limits are common</span><span class="me">Free, no watermark, no account</span></div>
+    </div>
   </section>
 
   <section class="sec">
@@ -65,12 +97,13 @@
 
   <section class="sec prose">
     <h2>Popular jobs people come here for</h2>
-    <ul>
+    <ul class="jobs">
       <li><a href="resize-image-to-200kb/">A photo under 200 KB for an online form</a></li>
       <li><a href="resize-image-to-20kb/">A photo under 20 KB for an exam or job portal</a></li>
       <li><a href="image-to-pdf/">Scanned documents saved as one PDF</a></li>
       <li><a href="qr-code-generator/">A Wi-Fi QR code for guests or customers</a></li>
       <li><a href="word-counter/">Checking the word count of an essay</a></li>
+      <li><a href="image-converter/">Turning a PNG screenshot into a JPG</a></li>
     </ul>
   </section>
 
@@ -84,6 +117,16 @@
     <p>No accounts, no queues, no waiting for an upload to finish. Most jobs are done in a few seconds.</p>
   </section>
 
+  <section class="sec prose faq-wrap">
+    <h2>Questions</h2>
+    <div class="faq">
+      <details><summary>Is Fitly really free?</summary><p>Yes. Every tool is free, with no watermark and no limit on how much you use it. Fitly runs on your own device, so it costs almost nothing to keep online.</p></details>
+      <details><summary>Where do my files go?</summary><p>Nowhere. Each tool runs inside your browser using your device's own power. There is no Fitly server waiting to receive files, which is also why the tools keep working offline.</p></details>
+      <details><summary>Does it work on my phone?</summary><p>Yes. Fitly is built for phones first, because most people meet a size limit while filling in a form on their phone. It works the same on a computer.</p></details>
+      <details><summary>Why did my photo get smaller in pixels too?</summary><p>Only when quality changes alone cannot reach the limit. The resizer lowers quality first; if the file is still too big, it reduces the width and height a little, always keeping the same proportions and never cropping.</p></details>
+    </div>
+  </section>
+
   <section class="sec prose">
     <h2>Start with the resizer</h2>
     <p>It is the tool most people come to Fitly for. Give it a photo and the size limit from your form, and it hands back a photo that fits, with nothing cut off.</p>
@@ -95,7 +138,7 @@
   <div><a class="brand" href="./" style="display:flex"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a><p>Free file tools that run in your browser. Your files are processed on your device and never uploaded.</p></div>
   <div><h3>Tools</h3><a href="image-resizer/">Image resizer</a><a href="image-converter/">Image converter</a><a href="image-to-pdf/">Images to PDF</a><a href="qr-code-generator/">QR code generator</a><a href="word-counter/">Word counter</a></div>
   <div><h3>Fitly</h3><a href="about/">About</a><a href="privacy/">Privacy</a><a href="contact/">Contact</a></div>
-</div></footer>
+</div><div class="wrap"><div class="bigword" aria-hidden="true">Fitly</div></div></footer>
 <script src="js/app.js"></script>
 </body>
 </html>
