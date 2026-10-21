@@ -124,6 +124,15 @@ img,svg{max-width:100%}
 .foot .brand{color:#fff;margin-bottom:10px}
 
 /* landing */
+.sec{padding-top:36px}
+.prose h2{margin-top:30px}
+.facts{font-size:14.5px;color:var(--mut);margin:14px 0 0}
+.facts b{color:var(--ink)}
+.band{background:var(--ink);border-radius:16px;padding:32px 30px;color:#dbe3f0}
+.band h2{font-family:var(--display);color:#fff;font-size:clamp(1.6rem,3.2vw,2.2rem);letter-spacing:-.025em;margin:0 0 10px;line-height:1.1}
+.band p{color:#aeb9cc;max-width:62ch;margin:0 0 20px}
+.btn.lime{background:var(--lime);color:var(--ink)}
+.btn.lime:hover{background:#d8f78a}
 a.btn{display:inline-block;text-decoration:none}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 24px}
 .demo{margin-top:2px}
