@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR code generator for links, text and Wi-Fi, free | Fitly</title>
+<meta name="description" content="Make a QR code for a link, text or Wi-Fi network. Download as PNG or SVG. Free and private, it works offline.">
+<link rel="canonical" href="https://abdulsami026-crypto.github.io/fitly-web/qr-code-generator/">
+<meta name="theme-color" content="#3b3bf2">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Fitly">
+<meta property="og:title" content="QR code generator for links, text and Wi-Fi, free | Fitly"><meta property="og:description" content="Make a QR code for a link, text or Wi-Fi network. Download as PNG or SVG. Free and private, it works offline."><meta property="og:url" content="https://abdulsami026-crypto.github.io/fitly-web/qr-code-generator/">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fitly QR code generator","url":"https://abdulsami026-crypto.github.io/fitly-web/qr-code-generator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do these QR codes expire?","acceptedAnswer":{"@type":"Answer","text":"No. The code simply contains your text or link, so it works as long as that link works."}},{"@type":"Question","name":"What does error correction do?","acceptedAnswer":{"@type":"Answer","text":"Higher levels let a code still scan when it is dirty or partly covered, but they make the code denser."}},{"@type":"Question","name":"Can I use a Wi-Fi code?","acceptedAnswer":{"@type":"Answer","text":"Yes. Phones that scan it offer to join the network. Keep the printed code somewhere private if the password is sensitive."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a>
+  <nav class="nav" aria-label="Tools"><a href="../image-resizer/">Resizer</a><a href="../image-converter/">Converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/" aria-current="page">QR codes</a><a href="../word-counter/">Word counter</a></nav>
+</div></header>
+<main id="main">
+
+<div class="wrap">
+  <div class="page-head"><h1>Make a QR code</h1><p class="lede">Type a link, some text or your Wi-Fi details and download the code as a PNG or a sharp SVG.</p></div>
+  
+<div class="panel" id="tool">
+  <div class="split">
+    <div>
+      <div class="fields" style="margin-top:0">
+        <div style="grid-column:1/-1"><label for="kind">What is the code for?</label>
+          <select id="kind"><option value="text">A link or text</option><option value="wifi">Wi-Fi network</option></select></div>
+      </div>
+      <div id="textrow" style="margin-top:14px"><label for="text" style="font-size:13px;font-weight:600;color:var(--mut)">Link or text</label>
+        <textarea id="text" class="big-text" style="min-height:110px" placeholder="https://example.com"></textarea></div>
+      <div id="wifirow" class="fields" hidden>
+        <div><label for="ssid">Network name</label><input id="ssid" autocomplete="off"></div>
+        <div><label for="sec">Security</label><select id="sec"><option value="WPA">WPA/WPA2/WPA3</option><option value="WEP">WEP</option><option value="nopass">None</option></select></div>
+        <div><label for="pass">Password</label><input id="pass" autocomplete="off"></div>
+      </div>
+      <div class="fields">
+        <div><label for="ecc">Error correction</label>
+          <select id="ecc"><option value="L">Low (smallest code)</option><option value="M" selected>Medium</option><option value="Q">Quartile</option><option value="H">High (survives damage)</option></select></div>
+        <div><label for="size">Size (px)</label>
+          <select id="size"><option>256</option><option>512</option><option selected>1024</option><option>2048</option></select></div>
+        <div><label for="fg">Code colour</label><input id="fg" type="color" value="#0e1a2b"></div>
+        <div><label for="bg">Background</label><input id="bg" type="color" value="#ffffff"></div>
+      </div>
+      <p class="hint">Keep strong contrast between the code and the background, and test the code with a phone before printing it.</p>
+    </div>
+    <div class="qr-out">
+      <p id="empty" class="hint" style="margin-top:0">Type something on the left and the code appears here.</p>
+      <div id="out" hidden>
+        <canvas id="qr" width="300" height="300" aria-label="Your QR code"></canvas>
+        <p class="hint" id="dim"></p>
+        <div class="bar" style="justify-content:center"><button class="btn" id="png">Download PNG</button><button class="btn ghost" id="svg">Download SVG</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="prose"><h2>How to use it</h2><ol><li>Choose what the code is for and type the details.</li><li>Pick a size and colours if you like.</li><li>Download the PNG, or the SVG for printing at any size.</li></ol><h2>Questions</h2><div class="faq"><details><summary>Do these QR codes expire?</summary><p>No. The code simply contains your text or link, so it works as long as that link works.</p></details><details><summary>What does error correction do?</summary><p>Higher levels let a code still scan when it is dirty or partly covered, but they make the code denser.</p></details><details><summary>Can I use a Wi-Fi code?</summary><p>Yes. Phones that scan it offer to join the network. Keep the printed code somewhere private if the password is sensitive.</p></details></div><h2>More tools</h2><div class="related"><a href="../image-resizer/">Image resizer</a><a href="../image-converter/">Image converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../word-counter/">Word counter</a></div></div>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="../" style="display:flex"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a><p>Free file tools that run in your browser. Your files are processed on your device and never uploaded.</p></div>
+  <div><h3>Tools</h3><a href="../image-resizer/">Image resizer</a><a href="../image-converter/">Image converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/">QR code generator</a><a href="../word-counter/">Word counter</a></div>
+  <div><h3>Fitly</h3><a href="../about/">About</a><a href="../privacy/">Privacy</a><a href="../contact/">Contact</a></div>
+</div></footer>
+<script src="../js/app.js"></script>
+<script src="../js/vendor/qrcode.js"></script>
+<script src="../js/tools/qr.js"></script>
+</body>
+</html>

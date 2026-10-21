@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitly: image resizer and free file tools that run in your browser</title>
+<meta name="description" content="Resize photos to 20 KB, 50 KB, 100 KB, 200 KB or under 1 MB without cropping. Free tools that run in your browser. Nothing is uploaded.">
+<link rel="canonical" href="https://abdulsami026-crypto.github.io/fitly-web/">
+<meta name="theme-color" content="#3b3bf2">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Fitly">
+<meta property="og:title" content="Fitly: image resizer and free file tools that run in your browser"><meta property="og:description" content="Resize photos to 20 KB, 50 KB, 100 KB, 200 KB or under 1 MB without cropping. Free tools that run in your browser. Nothing is uploaded."><meta property="og:url" content="https://abdulsami026-crypto.github.io/fitly-web/">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fitly image resizer","url":"https://abdulsami026-crypto.github.io/fitly-web/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a>
+  <nav class="nav" aria-label="Tools"><a href="image-resizer/">Resizer</a><a href="image-converter/">Converter</a><a href="image-to-pdf/">Images to PDF</a><a href="qr-code-generator/">QR codes</a><a href="word-counter/">Word counter</a></nav>
+</div></header>
+<main id="main">
+
+<div class="wrap">
+  <section class="hero">
+    <h1>Fit any photo under the size limit.</h1>
+    <p class="lede">Forms and websites reject big files. Add your photos, pick the limit, and get them back smaller with nothing cropped. It all happens in your browser.</p>
+    <ul class="chips" aria-label="Common size limits"><li><a href="resize-image-to-20kb/">20 KB</a></li><li><a href="resize-image-to-50kb/">50 KB</a></li><li><a href="resize-image-to-100kb/">100 KB</a></li><li><a href="resize-image-to-200kb/">200 KB</a></li><li><a href="resize-image-to-500kb/">500 KB</a></li><li><a href="image-resizer/" aria-current="page">1 MB</a></li></ul>
+  </section>
+  
+<div class="panel" id="tool">
+  
+  <div class="drop" id="drop" role="button" tabindex="0" aria-label="Drop photos here or tap to choose">
+    <strong>Drop photos here or tap to choose</strong>
+    <span>JPG, PNG, WebP, GIF or BMP. Add as many as you like.</span>
+    <input id="file" type="file" accept="image/*" multiple hidden>
+  </div>
+  <div class="fields">
+    <div><label for="maxkb">Size limit (KB)</label><input id="maxkb" type="number" inputmode="numeric" min="5" max="20000" value="1000"></div>
+    <div><label for="fmt">Save as</label>
+      <select id="fmt"><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option></select></div>
+    <div><label for="maxdim">Longest side (px, optional)</label><input id="maxdim" type="number" inputmode="numeric" min="50" placeholder="Keep original"></div>
+    <div><label for="keep">Width and height</label>
+      <select id="keep"><option value="0">Keep quality, shrink only if needed</option><option value="1">Always keep original width and height</option></select></div>
+    <div><label for="minq">Keep quality at least</label>
+      <select id="minq"><option value="0.85">High</option><option value="0.75" selected>Balanced</option><option value="0.6">Smaller files</option></select></div>
+  </div>
+  <div class="bar">
+    <button class="btn" id="go" disabled>Resize photos</button>
+    <button class="btn ghost" id="dlall" disabled>Download all</button>
+    <button class="btn ghost" id="clear" disabled>Clear</button>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--mut);margin-left:auto"><input type="checkbox" id="auto" checked> Resize as soon as I add photos</label>
+  </div>
+  <p class="hint">Nothing is ever cropped. By default Fitly lowers quality first and reduces the pixel dimensions only if it has to. Choose "Always keep original width and height" to keep every pixel of the frame and let quality drop instead. Transparent PNGs get a white background when saved as JPG; choose WebP to keep transparency.</p>
+  <div id="list" class="files" hidden></div>
+</div>
+  <section class="sec">
+    <h2>More tools for everyday files</h2>
+    <ul class="tools"><li><a href="image-resizer/"><span class="t">Image resizer</span><span class="d">Shrink photos to an exact size limit without cropping.</span><span class="o">Works offline</span></a></li><li><a href="image-converter/"><span class="t">Image converter</span><span class="d">Switch images between JPG, PNG and WebP.</span><span class="o">Works offline</span></a></li><li><a href="image-to-pdf/"><span class="t">Images to PDF</span><span class="d">Put photos in one PDF, in the order you choose.</span><span class="o">Works offline</span></a></li><li><a href="qr-code-generator/"><span class="t">QR code generator</span><span class="d">Make codes for links, text and Wi-Fi as PNG or SVG.</span><span class="o">Works offline</span></a></li><li><a href="word-counter/"><span class="t">Word counter</span><span class="d">Count words, characters and sentences, and see reading time.</span><span class="o">Works offline</span></a></li></ul>
+  </section>
+  <section class="sec prose">
+    <h2>Your files stay on your device</h2>
+    <p>Fitly does the work inside your browser, so your photos and text are never sent to a server. Open any tool once and it keeps working without a connection.</p>
+  </section>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="./" style="display:flex"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a><p>Free file tools that run in your browser. Your files are processed on your device and never uploaded.</p></div>
+  <div><h3>Tools</h3><a href="image-resizer/">Image resizer</a><a href="image-converter/">Image converter</a><a href="image-to-pdf/">Images to PDF</a><a href="qr-code-generator/">QR code generator</a><a href="word-counter/">Word counter</a></div>
+  <div><h3>Fitly</h3><a href="about/">About</a><a href="privacy/">Privacy</a><a href="contact/">Contact</a></div>
+</div></footer>
+<script src="js/app.js"></script>
+<script src="js/tools/resizer.js"></script>
+</body>
+</html>

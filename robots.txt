@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdulsami026-crypto.github.io/fitly-web/sitemap.xml

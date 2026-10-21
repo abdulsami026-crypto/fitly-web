@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resize image to 20 KB online, free, no cropping | Fitly</title>
+<meta name="description" content="Reduce any photo to 20 KB or less without cropping. Free, works in your browser and nothing is uploaded.">
+<link rel="canonical" href="https://abdulsami026-crypto.github.io/fitly-web/resize-image-to-20kb/">
+<meta name="theme-color" content="#3b3bf2">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Fitly">
+<meta property="og:title" content="Resize image to 20 KB online, free, no cropping | Fitly"><meta property="og:description" content="Reduce any photo to 20 KB or less without cropping. Free, works in your browser and nothing is uploaded."><meta property="og:url" content="https://abdulsami026-crypto.github.io/fitly-web/resize-image-to-20kb/">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fitly 20 KB image resizer","url":"https://abdulsami026-crypto.github.io/fitly-web/resize-image-to-20kb/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will the photo still look good at 20 KB?","acceptedAnswer":{"@type":"Answer","text":"It will be smaller than the original, so some detail is lost. Fitly keeps as much quality as the limit allows."}},{"@type":"Question","name":"Does it crop the image?","acceptedAnswer":{"@type":"Answer","text":"No. The whole image is kept. If needed, the width and height are reduced with the same proportions."}},{"@type":"Question","name":"What if my form asks for exact dimensions?","acceptedAnswer":{"@type":"Answer","text":"Use the longest side box to set a maximum width or height. If you need exact pixel dimensions or a different shape, crop the photo first, then bring it here."}},{"@type":"Question","name":"Is my photo uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Everything happens in your browser."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a>
+  <nav class="nav" aria-label="Tools"><a href="../image-resizer/" aria-current="page">Resizer</a><a href="../image-converter/">Converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/">QR codes</a><a href="../word-counter/">Word counter</a></nav>
+</div></header>
+<main id="main">
+
+<div class="wrap">
+  <div class="page-head"><h1>Resize an image to 20 KB</h1><p class="lede">Add your photo and Fitly brings it under 20 KB. The full picture is kept and nothing is cropped.</p><ul class="chips" aria-label="Common size limits"><li><a href="../resize-image-to-20kb/" aria-current="page">20 KB</a></li><li><a href="../resize-image-to-50kb/">50 KB</a></li><li><a href="../resize-image-to-100kb/">100 KB</a></li><li><a href="../resize-image-to-200kb/">200 KB</a></li><li><a href="../resize-image-to-500kb/">500 KB</a></li><li><a href="../image-resizer/">1 MB</a></li></ul></div>
+  
+<div class="panel" id="tool">
+  
+  <div class="drop" id="drop" role="button" tabindex="0" aria-label="Drop photos here or tap to choose">
+    <strong>Drop photos here or tap to choose</strong>
+    <span>JPG, PNG, WebP, GIF or BMP. Add as many as you like.</span>
+    <input id="file" type="file" accept="image/*" multiple hidden>
+  </div>
+  <div class="fields">
+    <div><label for="maxkb">Size limit (KB)</label><input id="maxkb" type="number" inputmode="numeric" min="5" max="20000" value="20"></div>
+    <div><label for="fmt">Save as</label>
+      <select id="fmt"><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option></select></div>
+    <div><label for="maxdim">Longest side (px, optional)</label><input id="maxdim" type="number" inputmode="numeric" min="50" placeholder="Keep original"></div>
+    <div><label for="keep">Width and height</label>
+      <select id="keep"><option value="0">Keep quality, shrink only if needed</option><option value="1">Always keep original width and height</option></select></div>
+    <div><label for="minq">Keep quality at least</label>
+      <select id="minq"><option value="0.85">High</option><option value="0.75" selected>Balanced</option><option value="0.6">Smaller files</option></select></div>
+  </div>
+  <div class="bar">
+    <button class="btn" id="go" disabled>Resize photos</button>
+    <button class="btn ghost" id="dlall" disabled>Download all</button>
+    <button class="btn ghost" id="clear" disabled>Clear</button>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--mut);margin-left:auto"><input type="checkbox" id="auto" checked> Resize as soon as I add photos</label>
+  </div>
+  <p class="hint">Nothing is ever cropped. By default Fitly lowers quality first and reduces the pixel dimensions only if it has to. Choose "Always keep original width and height" to keep every pixel of the frame and let quality drop instead. Transparent PNGs get a white background when saved as JPG; choose WebP to keep transparency.</p>
+  <div id="list" class="files" hidden></div>
+</div>
+  <div class="prose"><p>A 20 KB limit is tiny. Fitly will reduce the pixel dimensions as well as the quality, so expect a small image. That is usually fine for signatures, stamps and small ID photos.</p><h2>How to use it</h2><ol><li>Drop your photo in the box, or tap it to choose it.</li><li>The limit is already set to 20 KB. Change it if your form asks for something different.</li><li>Check the result, then download it.</li></ol><h2>Questions</h2><div class="faq"><details><summary>Will the photo still look good at 20 KB?</summary><p>It will be smaller than the original, so some detail is lost. Fitly keeps as much quality as the limit allows.</p></details><details><summary>Does it crop the image?</summary><p>No. The whole image is kept. If needed, the width and height are reduced with the same proportions.</p></details><details><summary>What if my form asks for exact dimensions?</summary><p>Use the longest side box to set a maximum width or height. If you need exact pixel dimensions or a different shape, crop the photo first, then bring it here.</p></details><details><summary>Is my photo uploaded?</summary><p>No. Everything happens in your browser.</p></details></div><h2>More tools</h2><div class="related"><a href="../image-resizer/">Image resizer</a><a href="../image-converter/">Image converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/">QR code generator</a><a href="../word-counter/">Word counter</a></div></div>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="../" style="display:flex"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a><p>Free file tools that run in your browser. Your files are processed on your device and never uploaded.</p></div>
+  <div><h3>Tools</h3><a href="../image-resizer/">Image resizer</a><a href="../image-converter/">Image converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/">QR code generator</a><a href="../word-counter/">Word counter</a></div>
+  <div><h3>Fitly</h3><a href="../about/">About</a><a href="../privacy/">Privacy</a><a href="../contact/">Contact</a></div>
+</div></footer>
+<script src="../js/app.js"></script>
+<script src="../js/tools/resizer.js"></script>
+</body>
+</html>
