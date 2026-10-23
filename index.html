@@ -6,7 +6,7 @@
 <title>Fitly: image resizer and free file tools that run in your browser</title>
 <meta name="description" content="Free file tools that run in your browser and never upload your files: resize photos to an exact KB limit without cropping, convert images, make PDFs and QR codes, count words.">
 <link rel="canonical" href="https://abdulsami026-crypto.github.io/fitly-web/">
-<meta name="theme-color" content="#3b3bf2">
+<meta name="theme-color" content="#3a54e8">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Fitly">
 <meta property="og:title" content="Fitly: image resizer and free file tools that run in your browser"><meta property="og:description" content="Free file tools that run in your browser and never upload your files: resize photos to an exact KB limit without cropping, convert images, make PDFs and QR codes, count words."><meta property="og:url" content="https://abdulsami026-crypto.github.io/fitly-web/">
 <meta property="og:image" content="https://abdulsami026-crypto.github.io/fitly-web/og.png">
@@ -17,128 +17,324 @@
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fitly","url":"https://abdulsami026-crypto.github.io/fitly-web/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
-<body>
+<body class="landing">
+<div class="ubar"><div class="wrap">
+  <span><b>Fitly is free.</b> Your files are processed on your device — never uploaded.</span>
+  <span class="r"><span>Works offline</span><span>No sign-up</span><span>No watermark</span></span>
+</div></div>
+
 <header class="top"><div class="wrap">
-  <a class="brand" href="./"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a>
+  <a class="brand" href="./"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3a54e8"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#b9e356" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly<span class="dot" aria-hidden="true"></span></a>
   <nav class="nav" aria-label="Tools"><a href="image-resizer/">Resizer</a><a href="image-converter/">Converter</a><a href="image-to-pdf/">Images to PDF</a><a href="qr-code-generator/">QR codes</a><a href="word-counter/">Word counter</a></nav>
+  <div class="acts"><a class="btn ghost sm" href="#meet">All tools</a><a class="btn sm" href="image-resizer/">Resize a photo</a></div>
 </div></header>
-<main id="main">
 
-<div class="wrap">
-  <section class="hero">
-    <h1>File tools that <span class="hl">never upload</span> your files.</h1>
-    <p class="lede">Resize a photo to the exact KB a form demands. Convert an image. Turn photos into a PDF. Make a QR code. Count the words. Everything runs inside your browser, so your files never leave your device.</p>
-    <div class="cta-row">
-      <a class="btn" href="image-resizer/">Resize a photo</a>
-      <a class="btn ghost" href="#tools">Browse all tools</a>
+<section class="hero">
+  <div class="dots" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="badge"><i></i>100% in your browser — no server involved</span>
+      <h1>Fit the file.<br><span class="u">Skip</span> the <span class="hl">upload.</span></h1>
+      <p class="lede">Five everyday tools. One promise: your files never leave your device. Pick any tool in the list and watch it work in the window.</p>
+
+      <div class="tabs" role="tablist" aria-label="Fitly tools showcase">
+        <button class="tab" role="tab" aria-selected="true" data-pane="0"><span class="n">01</span><span class="t">Image resizer</span><span class="d">Shrink any photo to the exact KB a form demands — full picture kept, nothing cropped.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="1"><span class="n">02</span><span class="t">Image converter</span><span class="d">JPG, PNG and WebP, back and forth — one photo or a whole batch in a single ZIP.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="2"><span class="n">03</span><span class="t">Images to PDF</span><span class="d">Photos and scans in one tidy PDF, in your order, on A4 or Letter.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="3"><span class="n">04</span><span class="t">QR code generator</span><span class="d">Codes for links, text and Wi-Fi — download as PNG or print-crisp SVG.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="4"><span class="n">05</span><span class="t">Word counter</span><span class="d">Words, characters and reading time, counted live as you type.</span></button>
+      </div>
+
+      <ul class="trust"><li>No uploads</li><li>Nothing cropped</li><li>Works offline</li></ul>
     </div>
-    <ul class="chips" aria-label="Popular size limits"><li><a href="resize-image-to-20kb/">20 KB</a></li><li><a href="resize-image-to-50kb/">50 KB</a></li><li><a href="resize-image-to-100kb/">100 KB</a></li><li><a href="resize-image-to-200kb/">200 KB</a></li><li><a href="resize-image-to-500kb/">500 KB</a></li><li><a href="image-resizer/">1 MB</a></li></ul>
 
-    <div class="panel show" aria-hidden="true">
-      <div class="show-bar"><i></i><i></i><i class="on"></i><span>Fitly · Image resizer</span></div>
-      <div class="show-body">
-        <div class="file">
-          <span class="thumb"><svg viewBox="0 0 88 66" width="88" height="66"><rect width="88" height="66" fill="#b9cdf5"/><circle cx="66" cy="16" r="8" fill="#c9f26b"/><path d="M0 52 L26 26 L44 44 L58 30 L88 54 L88 66 L0 66 Z" fill="#3b3bf2" opacity=".55"/><path d="M0 58 L30 36 L52 52 L70 40 L88 56 L88 66 L0 66 Z" fill="#0e1a2b" opacity=".65"/></svg></span>
-          <div>
-            <div class="nm">photo.jpg</div>
-            <div class="gauge"><i class="g-old" style="width:100%"></i><i class="g-new" style="width:18%"></i><span class="g-lim" style="left:21%" data-l="limit 200 KB"></span></div>
-            <div class="mt"><b>187 KB</b> <span class="good">fits</span> · 1528 × 1146px (was 4000 × 3000) · quality 92%</div>
+    <div class="showwrap">
+      <div class="floatpill" id="floatpill"><b>187 KB</b> · fits</div>
+      <div class="show" id="showcase">
+        <div class="show-bar"><i></i><i></i><i class="on"></i><span class="urlpill" id="urlpill">fitly · image resizer</span></div>
+        <div class="panes">
+
+          <div class="pane active" aria-hidden="false">
+            <div class="file" style="border-top:0;padding-top:2px">
+              <span class="thumb"><svg viewBox="0 0 88 66"><rect width="88" height="66" fill="#b9cdf5"/><circle cx="66" cy="16" r="8" fill="#b9e356"/><path d="M0 52 L26 26 L44 44 L58 30 L88 54 L88 66 L0 66 Z" fill="#3a54e8" opacity=".55"/><path d="M0 58 L30 36 L52 52 L70 40 L88 56 L88 66 L0 66 Z" fill="#111a29" opacity=".65"/></svg></span>
+              <div>
+                <div class="nm">photo.jpg</div>
+                <div class="gauge"><i class="g-old" style="width:100%"></i><i class="g-new" style="width:18%"></i><span class="g-lim" style="left:21%" data-l="limit 200 KB"></span></div>
+                <div class="mt"><b>187 KB</b> <span class="good">fits</span> · 1528 × 1146px (was 4000 × 3000) · quality 92%</div>
+              </div>
+              <span class="dlbtn">Download</span>
+            </div>
+            <div class="file">
+              <span class="thumb"><svg viewBox="0 0 88 66"><rect width="88" height="66" fill="#eef1f7"/><rect x="26" y="8" width="36" height="50" rx="3" fill="#fff" stroke="#e3e7ef"/><circle cx="44" cy="26" r="7" fill="#3a54e8"/><path d="M33 50c2-7 6-10 11-10s9 3 11 10z" fill="#111a29" opacity=".7"/></svg></span>
+              <div>
+                <div class="nm">id-photo.png</div>
+                <div class="gauge"><i class="g-old" style="width:62%"></i><i class="g-new" style="width:9%"></i><span class="g-lim" style="left:11%" data-l="limit 50 KB"></span></div>
+                <div class="mt"><b>48 KB</b> <span class="good">fits</span> · 800 × 1000px (was 1200 × 1500) · quality 88%</div>
+              </div>
+              <span class="dlbtn">Download</span>
+            </div>
+            <div class="show-foot"><span>2 photos fitted in seconds</span><span class="btn">Download all as ZIP</span></div>
           </div>
-          <div class="acts"><span class="btn ghost">Download</span></div>
-        </div>
-        <div class="file">
-          <span class="thumb"><svg viewBox="0 0 88 66" width="88" height="66"><rect width="88" height="66" fill="#eef1f7"/><rect x="26" y="8" width="36" height="50" rx="3" fill="#fff" stroke="#dde2ec"/><circle cx="44" cy="26" r="7" fill="#3b3bf2"/><path d="M33 50c2-7 6-10 11-10s9 3 11 10z" fill="#0e1a2b" opacity=".7"/></svg></span>
-          <div>
-            <div class="nm">id-photo.png</div>
-            <div class="gauge"><i class="g-old" style="width:62%"></i><i class="g-new" style="width:9%"></i><span class="g-lim" style="left:11%" data-l="limit 50 KB"></span></div>
-            <div class="mt"><b>48 KB</b> <span class="good">fits</span> · 800 × 1000px (was 1200 × 1500) · quality 88%</div>
+
+          <div class="pane" aria-hidden="true">
+            <div class="seg"><span>JPG</span><span>PNG</span><span class="on">WebP</span></div>
+            <div class="conv-row"><span class="from">photo.png</span><span class="arr">→</span><span class="to">photo.webp</span><span class="sz">2.4 MB → <b>310 KB</b></span></div>
+            <div class="conv-row"><span class="from">banner.jpg</span><span class="arr">→</span><span class="to">banner.webp</span><span class="sz">890 KB → <b>121 KB</b></span></div>
+            <div class="conv-row"><span class="from">logo.png</span><span class="arr">→</span><span class="to">logo.webp</span><span class="sz">640 KB → <b>88 KB</b></span></div>
+            <div class="show-foot"><span>3 images converted</span><span class="btn">Download all as ZIP</span></div>
           </div>
-          <div class="acts"><span class="btn ghost">Download</span></div>
+
+          <div class="pane" aria-hidden="true">
+            <div class="pages-row">
+              <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#dfe8fa"/><path d="M0 56 L24 30 L42 46 L58 32 L100 60 L100 74 L0 74 Z" fill="#3a54e8" opacity=".5"/></svg><div class="cap">Page 1 · photo</div></div>
+              <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#eef1f7"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="44" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="54" width="56" height="7" rx="3.5" fill="#e3e7ef"/></svg><div class="cap">Page 2 · scan</div></div>
+              <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#f7e9c8"/><circle cx="72" cy="18" r="9" fill="#b9e356"/><path d="M0 60 L28 34 L48 52 L66 38 L100 62 L100 74 L0 74 Z" fill="#111a29" opacity=".55"/></svg><div class="cap">Page 3 · photo</div></div>
+            </div>
+            <div class="show-foot"><span>document.pdf · 3 pages · A4</span><span class="btn">Download PDF</span></div>
+            <p class="mt" style="margin-top:12px">Drag pages into any order. The PDF is built on your device — the photos never leave it.</p>
+          </div>
+
+          <div class="pane" aria-hidden="true">
+            <div class="qr-flex">
+              <div class="qr-box"><svg id="qrsvg" viewBox="0 0 100 100" width="148" height="148" aria-hidden="true"></svg></div>
+              <div class="qr-side">
+                <div class="fakeinput">https://your-shop.example</div>
+                <div class="fmtrow"><span class="on">PNG</span><span>SVG</span></div>
+                <p class="mt" style="margin-top:12px">For a link, a line of text, or your Wi-Fi password — guests just point and connect.</p>
+              </div>
+            </div>
+            <div class="show-foot"><span>Ready to print or share</span><span class="btn">Download QR code</span></div>
+          </div>
+
+          <div class="pane" aria-hidden="true">
+            <div class="doc"><div class="ln"></div><div class="ln m"></div><div class="ln"></div><div class="ln s"></div><div class="ln m"></div></div>
+            <div class="stats">
+              <div class="stat"><b>248</b><span>words</span></div>
+              <div class="stat"><b>1,512</b><span>characters</span></div>
+              <div class="stat"><b>2 min</b><span>reading time</span></div>
+            </div>
+            <div class="show-foot"><span>Counted live, as you type</span><span class="btn">Open the counter</span></div>
+          </div>
+
         </div>
-        <div class="show-foot"><span>2 photos fitted</span><span class="btn">Download all as ZIP</span></div>
+      </div>
+      <div class="pips" role="tablist" aria-label="Showcase pages">
+        <button aria-current="true" data-pane="0" aria-label="Resizer"><i></i></button>
+        <button aria-current="false" data-pane="1" aria-label="Converter"><i></i></button>
+        <button aria-current="false" data-pane="2" aria-label="Images to PDF"><i></i></button>
+        <button aria-current="false" data-pane="3" aria-label="QR codes"><i></i></button>
+        <button aria-current="false" data-pane="4" aria-label="Word counter"><i></i></button>
       </div>
     </div>
-    <p class="hint">An example of the resizer at work. Every result shows where the photo started, where it landed, and the limit it had to fit.</p>
-    <p class="facts"><b>5</b> tools · <b>6</b> size limits · <b>0</b> uploads · <b>0</b> sign-ups</p>
-  </section>
+  </div>
+</section>
 
-  <section class="sec" style="padding-top:26px">
-    <ul class="points">
-      <li><b>Nothing is uploaded</b><p>There is no server to send your files to. The work happens on your phone or computer, and it even works with the internet off.</p></li>
-      <li><b>Nothing is cropped</b><p>The resizer keeps the whole picture and its shape. It lowers quality first and shrinks the pixels only when it has to.</p></li>
-      <li><b>Free, with no sign-up</b><p>Use every tool as much as you like. No account, no email address, no watermark on your files.</p></li>
-    </ul>
-  </section>
+<section class="why"><div class="wrap">
+  <div class="why-head">
+    <h2>One promise behind every tool</h2>
+    <p>Most file tools make their money from your files — uploads, accounts, watermarks. Fitly was built the other way around.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-item"><span class="sq"></span><h3>Nothing is uploaded</h3><p>There is no Fitly server waiting for your photo. Every tool runs inside your browser, using your own device's power.</p><p class="ex">Close the internet mid-job — it still finishes.</p></div>
+    <div class="why-item"><span class="sq"></span><h3>Nothing is cropped</h3><p>A smaller file should never mean a smaller picture. Fitly lowers quality first and touches the dimensions only when it must — the frame and its shape always stay whole.</p><p class="ex">What you shot is what you get back.</p></div>
+    <div class="why-item"><span class="sq"></span><h3>Free means free</h3><p>No account to open, no trial that runs out, no watermark stamped on your result, no "pro" version holding your own file hostage.</p><p class="ex">Every tool. Every feature. No catch.</p></div>
+  </div>
+</div></section>
 
-  <section class="sec" id="tools">
-    <h2>Tools for everyday files</h2>
-    <ul class="tools"><li><a href="image-resizer/"><span class="n">01</span><span class="t">Image resizer</span><span class="d">Get any photo under an exact limit, from 20 KB to 1 MB, with the full frame kept. Made for application forms, job portals and websites that reject big files.</span><span class="o">JPG · WebP</span></a></li><li><a href="image-converter/"><span class="n">02</span><span class="t">Image converter</span><span class="d">Change images between JPG, PNG and WebP, one at a time or in a batch, and download them all in one ZIP file.</span><span class="o">JPG · PNG · WebP</span></a></li><li><a href="image-to-pdf/"><span class="n">03</span><span class="t">Images to PDF</span><span class="d">Put photos into one tidy PDF, in the order you choose, on A4, Letter, or the size of the image itself.</span><span class="o">PDF</span></a></li><li><a href="qr-code-generator/"><span class="n">04</span><span class="t">QR code generator</span><span class="d">Make a QR code for a link, a piece of text, or your Wi-Fi, and download it as a PNG or a crisp SVG for print.</span><span class="o">PNG · SVG</span></a></li><li><a href="word-counter/"><span class="n">05</span><span class="t">Word counter</span><span class="d">Count words, characters and sentences as you type, and see the reading time. Handy for essays, forms and posts.</span><span class="o">Text</span></a></li></ul>
-  </section>
+<section class="meet" id="meet"><div class="wrap">
+  <div class="meet-head">
+    <h2>Meet the tools</h2>
+    <p>Five small tools, each built for one job people do every day — usually while a form waits, half filled, on their phone.</p>
+  </div>
 
-  <section class="sec">
-    <h2>Fitly vs upload tools</h2>
-    <p class="lede" style="font-size:1rem;margin-bottom:20px">A fair look at how most upload-based tools work, and how Fitly is different.</p>
-    <div class="cmp">
-      <div class="cmp-row head"><span></span><span>Upload tools</span><span class="me">Fitly</span></div>
-      <div class="cmp-row"><span class="k">Your files</span><span>Sent to their server</span><span class="me">Never leave your device</span></div>
-      <div class="cmp-row"><span class="k">Internet</span><span>Needed from start to finish</span><span class="me">Works offline after the first visit</span></div>
-      <div class="cmp-row"><span class="k">Your photo</span><span>Sometimes trimmed to fit</span><span class="me">Never cropped, full picture kept</span></div>
-      <div class="cmp-row"><span class="k">The catch</span><span>Watermarks or paid limits are common</span><span class="me">Free, no watermark, no account</span></div>
+  <div class="toolrow">
+    <div>
+      <div class="tn">01</div><h3>Image resizer</h3>
+      <p class="td">Tell it the limit from your form and it fits the photo under it — quality first, dimensions only if needed, the full frame always kept. Many photos at once? It hands them back in one ZIP.</p>
+      <p class="goodfor"><b>Good for</b><span>Application forms, job portals, visa and exam uploads that reject big photos.</span></p>
     </div>
-  </section>
-
-  <section class="sec">
-    <div class="band">
-      <h2>Works offline, too.</h2>
-      <p>Open any tool once and your browser keeps it. After that, Fitly works on a plane, in a basement office, or anywhere the signal gives up. Your files were never going to a server anyway.</p>
-      <p style="margin:0"><a class="btn lime" href="image-resizer/">Try the resizer</a></p>
+    <div class="vis" aria-hidden="true">
+      <div class="nm">photo.jpg</div>
+      <div class="gauge"><i class="g-old" style="width:100%"></i><i class="g-new" style="width:18%"></i><span class="g-lim" style="left:21%" data-l="limit 200 KB"></span></div>
+      <div class="mt"><b>187 KB</b> <span class="good">fits</span> · 1528 × 1146px (was 4000 × 3000) · quality 92%</div>
+      <p class="cap">Every result shows the before, the after, and the limit it had to fit.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="sec prose">
-    <h2>Popular jobs people come here for</h2>
-    <ul class="jobs">
-      <li><a href="resize-image-to-200kb/">A photo under 200 KB for an online form</a></li>
-      <li><a href="resize-image-to-20kb/">A photo under 20 KB for an exam or job portal</a></li>
-      <li><a href="image-to-pdf/">Scanned documents saved as one PDF</a></li>
-      <li><a href="qr-code-generator/">A Wi-Fi QR code for guests or customers</a></li>
-      <li><a href="word-counter/">Checking the word count of an essay</a></li>
-      <li><a href="image-converter/">Turning a PNG screenshot into a JPG</a></li>
-    </ul>
-  </section>
+  <div class="toolrow flip">
+    <div>
+      <div class="tn">02</div><h3>Image converter</h3>
+      <p class="td">JPG for forms, PNG for sharp edges and transparency, WebP when every kilobyte counts. Convert one image or a whole batch — same promise, nothing leaves the device.</p>
+      <p class="goodfor"><b>Good for</b><span>Screenshots a website won't accept, photos a form insists must be JPG.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div class="seg"><span>JPG</span><span>PNG</span><span class="on">WebP</span></div>
+      <div class="conv-row"><span class="from">photo.png</span><span class="arr">→</span><span class="to">photo.webp</span><span class="sz">2.4 MB → <b>310 KB</b></span></div>
+      <div class="conv-row"><span class="from">banner.jpg</span><span class="arr">→</span><span class="to">banner.webp</span><span class="sz">890 KB → <b>121 KB</b></span></div>
+      <p class="cap">Same picture, a fraction of the size.</p>
+    </div>
+  </div>
 
-  <section class="sec prose">
+  <div class="toolrow">
+    <div>
+      <div class="tn">03</div><h3>Images to PDF</h3>
+      <p class="td">Photos and scans become one tidy PDF, in the order you set them, on A4, Letter, or the size of the image itself. One file to send instead of nine loose photos.</p>
+      <p class="goodfor"><b>Good for</b><span>Documents for applications, homework, receipts and signed forms.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div class="pages-row">
+        <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#dfe8fa"/><path d="M0 56 L24 30 L42 46 L58 32 L100 60 L100 74 L0 74 Z" fill="#3a54e8" opacity=".5"/></svg><div class="cap">Page 1</div></div>
+        <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#eef1f7"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="44" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="54" width="56" height="7" rx="3.5" fill="#e3e7ef"/></svg><div class="cap">Page 2</div></div>
+        <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#f7e9c8"/><circle cx="72" cy="18" r="9" fill="#b9e356"/><path d="M0 60 L28 34 L48 52 L66 38 L100 62 L100 74 L0 74 Z" fill="#111a29" opacity=".55"/></svg><div class="cap">Page 3</div></div>
+      </div>
+      <p class="cap">document.pdf · 3 pages · A4 — built on your device.</p>
+    </div>
+  </div>
+
+  <div class="toolrow flip">
+    <div>
+      <div class="tn">04</div><h3>QR code generator</h3>
+      <p class="td">A code for your shop link, your menu, your Wi-Fi — made in seconds and downloaded as a PNG for screens or an SVG that stays crisp at any print size.</p>
+      <p class="goodfor"><b>Good for</b><span>Shop counters, restaurant tables, event posters, guest Wi-Fi.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div class="qr-flex">
+        <div class="qr-box" style="width:132px;height:132px;padding:10px"><svg class="qrsvg2" viewBox="0 0 100 100" width="110" height="110"></svg></div>
+        <div class="qr-side">
+          <div class="fakeinput">https://your-shop.example</div>
+          <div class="fmtrow"><span class="on">PNG</span><span>SVG</span></div>
+        </div>
+      </div>
+      <p class="cap">Point, scan, done — no app needed to read it.</p>
+    </div>
+  </div>
+
+  <div class="toolrow">
+    <div>
+      <div class="tn">05</div><h3>Word counter</h3>
+      <p class="td">Words, characters, sentences and reading time, counted live as you type or paste. Your text is counted where it sits — it is never sent anywhere to be counted.</p>
+      <p class="goodfor"><b>Good for</b><span>Essays with a word limit, application answers, posts and statements.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div class="doc"><div class="ln"></div><div class="ln m"></div><div class="ln"></div><div class="ln s"></div></div>
+      <div class="stats">
+        <div class="stat"><b>248</b><span>words</span></div>
+        <div class="stat"><b>1,512</b><span>characters</span></div>
+        <div class="stat"><b>2 min</b><span>reading time</span></div>
+      </div>
+      <p class="cap">The numbers move as you type.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="cmp"><div class="wrap">
+  <h2>Fitly vs upload tools</h2>
+  <p class="sub">The usual way to shrink a file is to hand it to a stranger's server and hope for the best. Here is the difference, line by line.</p>
+  <table class="vs">
+    <thead><tr><th scope="col"><span class="sr" style="position:absolute;left:-9999px">Feature</span></th><th scope="col">Upload tools</th><th scope="col" class="fit">Fitly</th></tr></thead>
+    <tbody>
+      <tr><td class="rowlab">Your files</td><td>Sent to their server, kept for hours or days</td><td class="fit">Never leave your device</td></tr>
+      <tr><td class="rowlab">Without internet</td><td>Dead — no upload, no tool</td><td class="fit">Works fully offline after the first visit</td></tr>
+      <tr><td class="rowlab">Sign-up</td><td>Often required before you can download</td><td class="fit">None, ever</td></tr>
+      <tr><td class="rowlab">Watermark</td><td>On free results, removed only if you pay</td><td class="fit">Never added</td></tr>
+      <tr><td class="rowlab">Fit an exact KB limit</td><td>Guesswork — compress and hope</td><td class="fit">Set the limit; it fits under it</td></tr>
+      <tr><td class="rowlab">Many files at once</td><td>One at a time, or a paid plan</td><td class="fit">Batch, returned as one ZIP</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section class="off"><div class="wrap">
+  <div>
+    <h2>Works <span class="hl">offline</span>, too.</h2>
+    <ul class="pts"><li>No signal needed</li><li>No data spent</li><li>Nothing to install</li></ul>
+  </div>
+  <p>Open Fitly once and your browser keeps it. After that, every tool works in a village with no signal, on a plane, on a phone that ran out of data — because the tools were never on a server to begin with. They live in the page, on your device.</p>
+</div></section>
+
+<section class="jobs"><div class="wrap">
+  <h2>Jobs people bring to Fitly</h2>
+  <p class="sub">Real tasks, usually done under a deadline, usually on a phone. If one of these is yours, the tools are in the menu at the top.</p>
+  <div class="jobgrid">
+    <div class="job"><div class="jn">01</div><h3>A photo under 200 KB</h3><p>The form says the photo is too big. Fitly fits it under the limit — whole picture, nothing cut off.</p></div>
+    <div class="job"><div class="jn">02</div><h3>Documents into one PDF</h3><p>Nine photos of papers become one clean PDF you can send, print, or attach anywhere.</p></div>
+    <div class="job"><div class="jn">03</div><h3>A QR for the shop counter</h3><p>Your payment or page link as a code customers scan — printed once, working forever.</p></div>
+    <div class="job"><div class="jn">04</div><h3>A JPG the portal accepts</h3><p>The site takes JPG only and your screenshot is PNG. Converted in seconds, same picture.</p></div>
+    <div class="job"><div class="jn">05</div><h3>An answer in 500 words</h3><p>Application answers and essays counted live, so the limit never catches you at the end.</p></div>
+    <div class="job"><div class="jn">06</div><h3>An ID photo under 50 KB</h3><p>Small enough for the strictest form, with the face and frame exactly as you shot them.</p></div>
+  </div>
+</div></section>
+
+<section class="howfaq"><div class="wrap">
+  <div>
     <h2>How it works</h2>
-    <ol>
-      <li>Pick a tool.</li>
-      <li>Add your file. It stays on your device while the tool works on it.</li>
-      <li>Download the result.</li>
-    </ol>
-    <p>No accounts, no queues, no waiting for an upload to finish. Most jobs are done in a few seconds.</p>
-  </section>
-
-  <section class="sec prose faq-wrap">
+    <div class="step"><span class="sn">1</span><div><h3>Open a tool from the top menu</h3><p>Five tools, one menu. No account, no download, nothing to install.</p></div></div>
+    <div class="step"><span class="sn">2</span><div><h3>Add your file and set what you need</h3><p>A size limit, a format, a page order. The work happens right there in the page, on your device.</p></div></div>
+    <div class="step"><span class="sn">3</span><div><h3>Download the result</h3><p>One file, or a whole batch in a single ZIP. Your original stays untouched, exactly where it was.</p></div></div>
+  </div>
+  <div class="faq">
     <h2>Questions</h2>
-    <div class="faq">
-      <details><summary>Is Fitly really free?</summary><p>Yes. Every tool is free, with no watermark and no limit on how much you use it. Fitly runs on your own device, so it costs almost nothing to keep online.</p></details>
-      <details><summary>Where do my files go?</summary><p>Nowhere. Each tool runs inside your browser using your device's own power. There is no Fitly server waiting to receive files, which is also why the tools keep working offline.</p></details>
-      <details><summary>Does it work on my phone?</summary><p>Yes. Fitly is built for phones first, because most people meet a size limit while filling in a form on their phone. It works the same on a computer.</p></details>
-      <details><summary>Why did my photo get smaller in pixels too?</summary><p>Only when quality changes alone cannot reach the limit. The resizer lowers quality first; if the file is still too big, it reduces the width and height a little, always keeping the same proportions and never cropping.</p></details>
-    </div>
-  </section>
+    <details><summary>Is Fitly really free?</summary><p>Yes. Every tool and every feature is free, with no sign-up and no watermark. There is no paid version waiting to unlock your own file.</p></details>
+    <details><summary>Where do my files go?</summary><p>Nowhere. Fitly has no server for your files to go to. Everything is processed by your own browser, on your own device, which is also why it works offline.</p></details>
+    <details><summary>Does it work on my phone?</summary><p>Yes — Fitly is built phone-first, because most people meet a size limit while filling a form on their phone. It works the same on a computer.</p></details>
+    <details><summary>Will a resized photo still look sharp?</summary><p>Fitly lowers quality gently before it ever touches dimensions, and stops the moment the file fits. At the size forms display photos, the result looks the same.</p></details>
+    <details><summary>Which formats can I use?</summary><p>JPG, PNG and WebP for images. The PDF tool turns images into PDF documents, and the QR generator gives you PNG or SVG codes.</p></details>
+  </div>
+</div></section>
 
-  <section class="sec prose">
-    <h2>Start with the resizer</h2>
-    <p>It is the tool most people come to Fitly for. Give it a photo and the size limit from your form, and it hands back a photo that fits, with nothing cut off.</p>
-    <p><a class="btn" href="image-resizer/">Resize a photo</a></p>
-  </section>
-</div>
-</main>
-<footer class="foot"><div class="wrap">
-  <div><a class="brand" href="./" style="display:flex"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a><p>Free file tools that run in your browser. Your files are processed on your device and never uploaded.</p></div>
-  <div><h3>Tools</h3><a href="image-resizer/">Image resizer</a><a href="image-converter/">Image converter</a><a href="image-to-pdf/">Images to PDF</a><a href="qr-code-generator/">QR code generator</a><a href="word-counter/">Word counter</a></div>
-  <div><h3>Fitly</h3><a href="about/">About</a><a href="privacy/">Privacy</a><a href="contact/">Contact</a></div>
-</div><div class="wrap"><div class="bigword" aria-hidden="true">Fitly</div></div></footer>
+<footer><div class="wrap">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a class="brand" href="./"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3a54e8"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#b9e356" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly<span class="dot" aria-hidden="true"></span></a>
+      <p>File tools that never upload your files. Free, offline, and on your device.</p>
+    </div>
+    <div class="foot-cols">
+      <div><h4>Site</h4><ul><li><a href="about/">About</a></li><li><a href="privacy/">Privacy</a></li><li><a href="contact/">Contact</a></li></ul></div>
+      <div><h4>The promise</h4><ul><li>No uploads</li><li>No sign-up</li><li>No watermark</li><li>Works offline</li></ul></div>
+    </div>
+  </div>
+  <div class="ghost" aria-hidden="true">Fitly</div>
+  <div class="foot-bar"><span>© 2026 Fitly. Your files never leave your device.</span><span>Made to fit.</span></div>
+</div></footer>
+<script>
+// Decorative QR pattern (not a real code)
+(function(){
+  const svg=document.getElementById('qrsvg'); if(!svg) return;
+  const N=21,S=100/N; let seed=42; const rnd=()=>{seed=(seed*1103515245+12345)%2147483648;return seed/2147483648};
+  let out='';
+  const finder=(x,y)=>`<rect x="${x*S}" y="${y*S}" width="${7*S}" height="${7*S}" fill="#111a29"/><rect x="${(x+1)*S}" y="${(y+1)*S}" width="${5*S}" height="${5*S}" fill="#fff"/><rect x="${(x+2)*S}" y="${(y+2)*S}" width="${3*S}" height="${3*S}" fill="#111a29"/>`;
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){
+    const inF=(x<8&&y<8)||(x>N-9&&y<8)||(x<8&&y>N-9);
+    if(!inF&&rnd()>.52) out+=`<rect x="${x*S}" y="${y*S}" width="${S}" height="${S}" fill="#111a29"/>`;
+  }
+  svg.innerHTML=out+finder(0,0)+finder(N-7,0)+finder(0,N-7);
+  document.querySelectorAll('.qrsvg2').forEach(el=>{el.innerHTML=out+finder(0,0)+finder(N-7,0)+finder(0,N-7);});
+})();
+
+// Rotating showcase, synced with the tool tabs
+(function(){
+  const tabs=[...document.querySelectorAll('.tab')], panes=[...document.querySelectorAll('.pane')],
+        pips=[...document.querySelectorAll('.pips button')], pill=document.getElementById('floatpill'),
+        url=document.getElementById('urlpill'), box=document.getElementById('showcase');
+  const names=['fitly · image resizer','fitly · image converter','fitly · images to PDF','fitly · QR code generator','fitly · word counter'];
+  const pills=['<b>187 KB</b> · fits','<b>−87%</b> · smaller','<b>3 pages</b> · one PDF','<b>PNG · SVG</b> · ready','<b>248</b> · words'];
+  let cur=0, timer=null;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function go(i){
+    cur=i;
+    tabs.forEach((t,k)=>t.setAttribute('aria-selected',k===i?'true':'false'));
+    panes.forEach((p,k)=>{p.classList.toggle('active',k===i);p.setAttribute('aria-hidden',k===i?'false':'true')});
+    pips.forEach((p,k)=>{p.setAttribute('aria-current',k===i?'true':'false');const f=p.querySelector('i');if(f){f.style.animation='none';void f.offsetWidth;f.style.animation='';}});
+    pill.innerHTML=pills[i]; url.textContent=names[i];
+  }
+  function play(){ if(reduce) return; stop(); timer=setInterval(()=>go((cur+1)%panes.length),4200); }
+  function stop(){ if(timer) clearInterval(timer); timer=null; }
+  tabs.forEach(t=>t.addEventListener('click',()=>{go(+t.dataset.pane); play();}));
+  pips.forEach(p=>p.addEventListener('click',()=>{go(+p.dataset.pane); play();}));
+  box.addEventListener('mouseenter',stop); box.addEventListener('mouseleave',play);
+  box.addEventListener('focusin',stop); box.addEventListener('focusout',play);
+  go(0); play();
+})();
+</script>
 <script src="js/app.js"></script>
 </body>
 </html>
