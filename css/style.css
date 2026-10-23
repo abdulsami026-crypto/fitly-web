@@ -339,8 +339,7 @@ body.landing table.vs td:first-child{font-weight:600;padding-left:0}
 body.landing table.vs td{color:var(--mut)}
 body.landing table.vs td.fit{color:var(--ink)}
 body.landing table.vs .rowlab{font-weight:600;color:var(--ink)}
-body.landing /* section 5: offline band */
-.off{background:var(--ink);color:#e7ecf5}
+body.landing .off{background:var(--ink);color:#e7ecf5}
 body.landing .off .wrap{padding-top:58px;padding-bottom:62px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 body.landing .off h2{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:1;font-size:clamp(2.2rem,5vw,3.6rem);margin:0}
 body.landing .off h2 .hl{background:var(--lime);color:var(--ink);padding:0 .12em;border-radius:8px}
@@ -348,8 +347,7 @@ body.landing .off p{color:#aeb9cc;margin:0;max-width:44ch;font-size:1.06rem}
 body.landing .off .pts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px;padding:0;list-style:none;font-size:14.5px;font-weight:600;color:#fff}
 body.landing .off .pts li{display:flex;align-items:center;gap:9px}
 body.landing .off .pts li::before{content:"";width:9px;height:9px;border-radius:2.5px;background:var(--lime)}
-body.landing /* section 6: popular jobs */
-.jobs .wrap{padding-top:66px;padding-bottom:70px}
+body.landing .jobs .wrap{padding-top:66px;padding-bottom:70px}
 body.landing .jobs h2{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:1.02;font-size:clamp(2rem,4.4vw,3.1rem);margin:0 0 12px}
 body.landing .jobs .sub{color:var(--mut);max-width:52ch;margin:0 0 36px;font-size:1.05rem}
 body.landing .jobgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 34px}
@@ -462,3 +460,8 @@ body.landing .floatpill{right:10px}
 body.landing .qr-flex{flex-direction:column;align-items:flex-start}
 body.landing .panes{min-height:430px}}
 @media (prefers-reduced-motion:reduce){body.landing *{transition:none!important}}
+
+/* landing collision fixes: old shared rules must not leak into the landing */
+body.landing .jobs{display:block}
+body.landing .hero{padding:0}
+body.landing .hero h1{max-width:none}
