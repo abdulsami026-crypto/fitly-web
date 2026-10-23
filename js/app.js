@@ -85,3 +85,24 @@
     window.addEventListener('load', () => navigator.serviceWorker.register(SW_URL).catch(() => {}));
   }
 })();
+
+/* navbar category dropdowns: click/tap toggles (hover handled in CSS) */
+document.addEventListener('DOMContentLoaded', () => {
+  const cats = [...document.querySelectorAll('.navcat')];
+  if (!cats.length) return;
+  const closeAll = except => cats.forEach(c => {
+    if (c !== except) { c.classList.remove('open'); c.querySelector('.navcat-btn').setAttribute('aria-expanded', 'false'); }
+  });
+  cats.forEach(cat => {
+    const btn = cat.querySelector('.navcat-btn');
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = cat.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      closeAll(cat);
+    });
+    cat.querySelector('.navmenu').addEventListener('click', e => e.stopPropagation());
+  });
+  document.addEventListener('click', () => closeAll(null));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(null); });
+});
