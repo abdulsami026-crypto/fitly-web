@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passport photo maker: ID photos at the exact size, print-ready | Fitly</title>
+<meta name="description" content="Free passport photo maker. Turn any photo into a print-ready ID photo at the exact size (35×45 mm, 2×2 inch and more), with 4×6 and A4 print sheets. Runs in your browser, nothing is uploaded.">
+<link rel="canonical" href="https://abdulsami026-crypto.github.io/fitly-web/passport-photo-maker/">
+<meta name="theme-color" content="#3b3bf2">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Fitly">
+<meta property="og:title" content="Passport photo maker: ID photos at the exact size, print-ready | Fitly"><meta property="og:description" content="Turn any photo into a print-ready ID photo at the exact size, with print sheets. Free, in your browser, nothing uploaded."><meta property="og:url" content="https://abdulsami026-crypto.github.io/fitly-web/passport-photo-maker/">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fitly passport photo maker","url":"https://abdulsami026-crypto.github.io/fitly-web/passport-photo-maker/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size will my photo be?","acceptedAnswer":{"@type":"Answer","text":"Exactly the size you pick, at 300 DPI: 35 × 45 mm is 413 × 531 pixels, 2 × 2 inch is 600 × 600 pixels, 33 × 48 mm is 390 × 567 pixels and 40 × 60 mm is 472 × 709 pixels."}},{"@type":"Question","name":"How do I print the photo?","acceptedAnswer":{"@type":"Answer","text":"Download a print sheet: the 4 × 6 inch sheet fits standard photo paper, the A4 sheet fits a home printer. Print at 100% size, not fit to page, and cut along the dashed lines."}},{"@type":"Question","name":"Is my photo uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The photo is framed and sized inside your browser on your own device. Nothing is sent to a server."}},{"@type":"Question","name":"What makes a good source photo?","acceptedAnswer":{"@type":"Answer","text":"Stand against a plain, light-coloured wall in even light, face the camera, and leave space around your head and shoulders. Fitly frames and sizes the photo; it does not change the background."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a>
+  <nav class="nav" aria-label="Tools"><a href="../image-resizer/">Resizer</a><a href="../passport-photo-maker/" aria-current="page">Passport photo</a><a href="../image-converter/">Converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/">QR codes</a><a href="../word-counter/">Word counter</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+  <div class="page-head"><h1>Passport photo maker</h1><p class="lede">Turn any photo into a print-ready ID photo at the exact size — framed by you, sized by Fitly, and never uploaded.</p></div>
+
+<div class="panel" id="tool">
+  <div class="drop" id="drop" role="button" tabindex="0" aria-label="Drop a photo here or tap to choose">
+    <strong>Drop a photo here or tap to choose</strong>
+    <span>JPG, PNG or WebP. One photo, taken against a plain wall works best.</span>
+    <input id="file" type="file" accept="image/*" hidden>
+  </div>
+
+  <p class="hint" id="pp-empty">Your photo will appear here with a frame and a face guide. Drag it into place, zoom if you need to, then download.</p>
+
+  <div id="pp-editor" hidden>
+    <canvas class="pp-stage" id="pp-stage" aria-label="Photo framing area. Drag to position the photo inside the frame."></canvas>
+    <div class="pp-zoomrow">
+      <label for="pp-zoom">Zoom</label>
+      <input type="range" id="pp-zoom" min="1" max="4" step="0.01" value="1">
+      <button class="btn ghost" id="pp-reset" type="button">Reset view</button>
+    </div>
+  </div>
+
+  <div class="fields">
+    <div><label for="pp-preset">Photo size</label>
+      <select id="pp-preset">
+        <option value="35x45" selected>35 × 45 mm — UK, Europe, most visas</option>
+        <option value="51x51">51 × 51 mm (2 × 2 in) — USA, Pakistan, India</option>
+        <option value="33x48">33 × 48 mm — China</option>
+        <option value="40x60">40 × 60 mm</option>
+      </select></div>
+    <div><label for="pp-limit">Also fit the file under</label>
+      <select id="pp-limit">
+        <option value="0" selected>No size limit</option>
+        <option value="50">50 KB</option>
+        <option value="100">100 KB</option>
+        <option value="200">200 KB</option>
+      </select></div>
+  </div>
+
+  <div class="bar">
+    <button class="btn" id="pp-dl-photo" disabled>Download photo</button>
+    <button class="btn ghost" id="pp-dl-4x6" disabled>Download 4×6 print sheet</button>
+    <button class="btn ghost" id="pp-dl-a4" disabled>Download A4 print sheet</button>
+    <button class="btn ghost" id="pp-clear" disabled>Clear</button>
+  </div>
+  <p class="hint" id="pp-meta">Photos are made at 300 DPI, the standard for printing. Print sheets include cut guides.</p>
+</div>
+
+  <div class="prose"><h2>How to use it</h2><ol><li>Add a photo — a plain, light wall behind you gives the cleanest result.</li><li>Pick the size your form or embassy asks for.</li><li>Drag the photo so your face sits inside the dashed oval, and zoom until your head and shoulders fill it the way the guide shows.</li><li>Download the photo for online forms, or a print sheet for paper copies.</li></ol><h2>Questions</h2><div class="faq"><details><summary>What size will my photo be?</summary><p>Exactly the size you pick, at 300 DPI: 35 × 45 mm is 413 × 531 pixels, 2 × 2 inch is 600 × 600 pixels, 33 × 48 mm is 390 × 567 pixels and 40 × 60 mm is 472 × 709 pixels.</p></details><details><summary>How do I print the photo?</summary><p>Download a print sheet: the 4 × 6 inch sheet fits standard photo paper, the A4 sheet fits a home printer. Print at 100% size — do not choose "fit to page" — and cut along the dashed lines.</p></details><details><summary>Is my photo uploaded anywhere?</summary><p>No. The photo is framed and sized inside your browser on your own device. Nothing is sent to a server, which is also why the tool works offline after your first visit.</p></details><details><summary>What makes a good source photo?</summary><p>Stand against a plain, light-coloured wall in even light, face the camera, and leave space around your head and shoulders. Fitly frames and sizes the photo; it does not change the background.</p></details></div><h2>More tools</h2><div class="related"><a href="../image-resizer/">Image resizer</a><a href="../image-converter/">Image converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/">QR code generator</a><a href="../word-counter/">Word counter</a></div></div>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="../" style="display:flex"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a><p>Free file tools that run in your browser. Your files are processed on your device and never uploaded.</p></div>
+  <div><h3>Tools</h3><a href="../image-resizer/">Image resizer</a><a href="../passport-photo-maker/">Passport photo maker</a><a href="../image-converter/">Image converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/">QR code generator</a><a href="../word-counter/">Word counter</a></div>
+  <div><h3>Fitly</h3><a href="../about/">About</a><a href="../privacy/">Privacy</a><a href="../contact/">Contact</a></div>
+</div></footer>
+<script src="../js/app.js"></script>
+<script src="../js/tools/passport.js"></script>
+</body>
+</html>
