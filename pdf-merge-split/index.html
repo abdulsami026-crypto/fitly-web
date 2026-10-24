@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF merge &amp; split: join PDFs or pull pages out, free | Fitly</title>
+<meta name="description" content="Free PDF merge and split tool. Combine several PDFs into one file, or extract page ranges and split every page into its own PDF. Runs 100% in your browser — nothing is uploaded.">
+<link rel="canonical" href="https://abdulsami026-crypto.github.io/fitly-web/pdf-merge-split/">
+<meta name="theme-color" content="#3b3bf2">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Fitly">
+<meta property="og:title" content="PDF merge &amp; split: join PDFs or pull pages out, free | Fitly"><meta property="og:description" content="Combine PDFs into one file, or pull pages out into a new PDF or a ZIP of single pages. Free, in your browser, nothing uploaded."><meta property="og:url" content="https://abdulsami026-crypto.github.io/fitly-web/pdf-merge-split/">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fitly PDF merge and split","url":"https://abdulsami026-crypto.github.io/fitly-web/pdf-merge-split/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is my PDF uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Merging and splitting happen inside your browser on your own device. Your files never leave your phone or computer, which is also why the tool works offline after your first visit."}},{"@type":"Question","name":"How do I write page ranges?","acceptedAnswer":{"@type":"Answer","text":"Use page numbers starting at 1. A single page is just its number (5), a run of pages is first-last (1-3), and you can mix them with commas: 1-3, 5, 8-10."}},{"@type":"Question","name":"Can I change the page order before merging?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add your PDFs, then use the Up and Down buttons on each file to set the order. The merged PDF follows that order exactly."}},{"@type":"Question","name":"What if my PDF is password-protected?","acceptedAnswer":{"@type":"Answer","text":"Locked PDFs can't be opened in the browser. Remove the password first (in your PDF reader's print-to-PDF, for example), then merge or split the unlocked copy."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a>
+  <nav class="nav" aria-label="Tools"><div class="navcat"><button class="navcat-btn" aria-expanded="false" aria-haspopup="true">Image tools<span class="car" aria-hidden="true">▾</span></button><div class="navmenu"><a href="../image-resizer/">Image resizer<span>Shrink a photo under a size limit</span></a><a href="../passport-photo-maker/">Passport photo maker<span>Exact-size ID photos, print-ready</span></a><a href="../image-converter/">Image converter<span>JPG, PNG and WebP</span></a></div></div><div class="navcat"><button class="navcat-btn" aria-expanded="false" aria-haspopup="true">PDF tools<span class="car" aria-hidden="true">▾</span></button><div class="navmenu"><a href="../pdf-merge-split/" aria-current="page">Merge &amp; split PDF<span>Join PDFs or pull pages out</span></a><a href="../image-to-pdf/">Images to PDF<span>Photos in one tidy PDF</span></a></div></div><div class="navcat"><button class="navcat-btn" aria-expanded="false" aria-haspopup="true">Text & codes<span class="car" aria-hidden="true">▾</span></button><div class="navmenu"><a href="../qr-code-generator/">QR code generator<span>Codes for links and Wi-Fi</span></a><a href="../word-counter/">Word counter<span>Words, characters, reading time</span></a></div></div></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+  <div class="page-head"><h1>PDF merge &amp; split</h1><p class="lede">Join several PDFs into one file, or pull pages out of a PDF — all inside your browser, never uploaded.</p></div>
+
+<div class="panel" id="tool">
+  <div class="tabs" role="tablist" aria-label="Choose merge or split">
+    <button class="btn" id="ms-tab-merge" type="button" role="tab" aria-selected="true" aria-controls="ms-merge">Merge PDFs</button>
+    <button class="btn ghost" id="ms-tab-split" type="button" role="tab" aria-selected="false" aria-controls="ms-split">Split a PDF</button>
+  </div>
+
+  <div id="ms-merge" role="tabpanel" aria-labelledby="ms-tab-merge">
+    <div class="drop" id="ms-drop" role="button" tabindex="0" aria-label="Drop PDF files here or tap to choose">
+      <strong>Drop PDF files here or tap to choose</strong>
+      <span>Add two or more PDFs. Set their order with the Up and Down buttons.</span>
+      <input id="ms-file" type="file" accept="application/pdf,.pdf" multiple hidden>
+    </div>
+    <div id="ms-list" class="files" hidden></div>
+    <div class="bar">
+      <button class="btn" id="ms-go" type="button" disabled>Merge into one PDF</button>
+      <button class="btn ghost" id="ms-clear" type="button" disabled>Clear</button>
+    </div>
+    <p class="hint" id="ms-status">Add at least two PDFs to merge them into one.</p>
+  </div>
+
+  <div id="ms-split" role="tabpanel" aria-labelledby="ms-tab-split" hidden>
+    <div class="drop" id="sp-drop" role="button" tabindex="0" aria-label="Drop one PDF here or tap to choose">
+      <strong>Drop one PDF here or tap to choose</strong>
+      <span>Then type the pages you want, or split every page at once.</span>
+      <input id="sp-file" type="file" accept="application/pdf,.pdf" hidden>
+    </div>
+    <div id="sp-info" class="file" hidden></div>
+    <div class="fields">
+      <div><label for="sp-range">Pages to extract</label>
+        <input id="sp-range" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 1-3, 5">
+        <p class="hint">Page numbers from 1. Ranges like 1-3, 5, 8-10.</p></div>
+    </div>
+    <div class="bar">
+      <button class="btn" id="sp-extract" type="button" disabled>Extract pages &rarr; one PDF</button>
+      <button class="btn ghost" id="sp-all" type="button" disabled>Split every page &rarr; ZIP</button>
+      <button class="btn ghost" id="sp-clear" type="button" disabled>Clear</button>
+    </div>
+    <p class="hint" id="sp-status"></p>
+  </div>
+</div>
+
+  <div class="prose"><h2>How to use it</h2><ol><li><strong>Merge:</strong> add two or more PDFs, order them with Up and Down, then tap "Merge into one PDF".</li><li><strong>Split:</strong> add one PDF, type the pages you want (like 1-3, 5), and extract them into a new PDF — or split every page into its own file, zipped together.</li><li>Your files are processed on your device and never uploaded, so the tool also works offline after your first visit.</li></ol><h2>Questions</h2><div class="faq"><details><summary>Is my PDF uploaded anywhere?</summary><p>No. Merging and splitting happen inside your browser on your own device. Your files never leave your phone or computer.</p></details><details><summary>How do I write page ranges?</summary><p>Use page numbers starting at 1. A single page is just its number (5), a run of pages is first-last (1-3), and you can mix them with commas: 1-3, 5, 8-10.</p></details><details><summary>Can I change the page order before merging?</summary><p>Yes. Add your PDFs, then use the Up and Down buttons on each file to set the order. The merged PDF follows that order exactly.</p></details><details><summary>What if my PDF is password-protected?</summary><p>Locked PDFs can't be opened in the browser. Remove the password first (in your PDF reader's print-to-PDF, for example), then merge or split the unlocked copy.</p></details><details><summary>Is there a size limit?</summary><p>No fixed limit. Very large files just take longer, especially on a phone — everything still happens on your device.</p></details></div><h2>More tools</h2><div class="related"><a href="../image-resizer/">Image resizer</a><a href="../image-converter/">Image converter</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/">QR code generator</a><a href="../word-counter/">Word counter</a></div></div>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="../" style="display:flex"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h-4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a><p>Free file tools that run in your browser. Your files are processed on your device and never uploaded.</p></div>
+  <div><h3>Tools</h3><a href="../image-resizer/">Image resizer</a><a href="../passport-photo-maker/">Passport photo maker</a><a href="../image-converter/">Image converter</a><a href="../pdf-merge-split/">Merge &amp; split PDF</a><a href="../image-to-pdf/">Images to PDF</a><a href="../qr-code-generator/">QR code generator</a><a href="../word-counter/">Word counter</a></div>
+  <div><h3>Fitly</h3><a href="../about/">About</a><a href="../privacy/">Privacy</a><a href="../contact/">Contact</a></div>
+</div></footer>
+<script src="../js/app.js"></script>
+<script src="../js/vendor/pdf-lib.min.js"></script>
+<script src="../js/tools/mergesplit.js"></script>
+</body>
+</html>

@@ -9,11 +9,14 @@
     '40x60': { w: 472, h: 709, wmm: 40, hmm: 60, label: '40 × 60 mm' }
   };
 
+  const VENDOR = new URL('../vendor/mediapipe/', document.currentScript.src).href;
   const stage = $('pp-stage'), ctx = stage.getContext('2d');
   const zoomEl = $('pp-zoom'), editor = $('pp-editor'), emptyNote = $('pp-empty');
   let img = null, imgName = 'photo';
   let zoom = 1, ox = 0, oy = 0; // pan offsets in CSS px, relative to cover-centred
   let view = { w: 0, h: 0, dpr: 1 };
+  // background change: AI person cutout (lazy-loaded, cached by the service worker)
+  let seg = null, segPromise = null, maskCanvas = null, maskFor = null, displayImg = null;
 
   const preset = () => PRESETS[$('pp-preset').value];
 
@@ -32,6 +35,8 @@
       });
     }
     zoom = 1; ox = 0; oy = 0; zoomEl.value = 1;
+    maskCanvas = null; maskFor = null; displayImg = null;
+    $('pp-bg').value = 'keep'; $('pp-bgcolor-wrap').hidden = true;
     editor.hidden = false; emptyNote.hidden = true;
     ['pp-dl-photo', 'pp-dl-4x6', 'pp-dl-a4', 'pp-clear'].forEach(id => $(id).disabled = false);
     resize(); updateMeta();
@@ -45,9 +50,10 @@
   }
 
   function drawGeom() {
+    const src = displayImg || img;
     const f = frameRect();
-    const scale = Math.max(f.w / img.width, f.h / img.height) * zoom;
-    const dw = img.width * scale, dh = img.height * scale;
+    const scale = Math.max(f.w / src.width, f.h / src.height) * zoom;
+    const dw = src.width * scale, dh = src.height * scale;
     const dx = f.x + (f.w - dw) / 2 + ox, dy = f.y + (f.h - dh) / 2 + oy;
     return { f, scale, dx, dy, dw, dh };
   }
@@ -67,7 +73,7 @@
     ctx.setTransform(view.dpr, 0, 0, view.dpr, 0, 0);
     ctx.fillStyle = '#131e30';
     ctx.fillRect(0, 0, view.w, view.h);
-    ctx.drawImage(img, g.dx, g.dy, g.dw, g.dh);
+    ctx.drawImage(displayImg || img, g.dx, g.dy, g.dw, g.dh);
     // dim outside the frame
     ctx.beginPath();
     ctx.rect(0, 0, view.w, view.h);
@@ -141,6 +147,90 @@
     $('pp-meta').textContent = `Your photo will be ${p.w} × ${p.h} px at 300 DPI (${p.label}), JPG. Print sheets are made from the same photo.`;
   }
 
+  // ---- background colour: AI person cutout (same model as Fitly's own apps) ----
+  async function ensureSegmenter() {
+    if (segPromise) return segPromise;
+    segPromise = (async () => {
+      const mod = await import(VENDOR + 'vision_bundle.mjs');
+      const vision = await mod.FilesetResolver.forVisionTasks(
+        VENDOR + 'wasm');
+      seg = await mod.ImageSegmenter.createFromOptions(vision, {
+        baseOptions: { modelAssetPath: VENDOR + 'selfie_segmenter.tflite' },
+        runningMode: 'IMAGE',
+        outputCategoryMask: true
+      });
+    })();
+    return segPromise;
+  }
+
+  async function computeMask() {
+    // segment at <=640px wide for speed; the mask is scaled up on use
+    const scale = Math.min(1, 640 / img.width);
+    const w = Math.round(img.width * scale), h = Math.round(img.height * scale);
+    const c = document.createElement('canvas'); c.width = w; c.height = h;
+    c.getContext('2d').drawImage(img, 0, 0, w, h);
+    const res = seg.segment(c);
+    const mw = res.categoryMask.width, mh = res.categoryMask.height;
+    const raw = res.categoryMask.getAsFloat32Array();
+    res.close();
+    // this model outputs 1 = background, 0 = person — invert to a person mask
+    let person = 0;
+    for (let i = 0; i < mw * mh; i++) if (raw[i] < 0.5) person++;
+    if (person / (mw * mh) < 0.03) return null; // nobody found: keep the whole photo
+    const mc = document.createElement('canvas'); mc.width = mw; mc.height = mh;
+    const mctx = mc.getContext('2d');
+    const imd = mctx.createImageData(mw, mh);
+    for (let i = 0; i < mw * mh; i++) imd.data[i * 4 + 3] = Math.max(0, Math.min(1, 1 - raw[i])) * 255;
+    mctx.putImageData(imd, 0, 0);
+    return mc;
+  }
+
+  function composite(bg) {
+    // background fill on the base layer, person on a separate masked layer —
+    // masking the base directly would erase the fill (transparent = black in JPG)
+    const c = document.createElement('canvas'); c.width = img.width; c.height = img.height;
+    const x = c.getContext('2d');
+    x.fillStyle = bg; x.fillRect(0, 0, c.width, c.height);
+    const layer = document.createElement('canvas'); layer.width = c.width; layer.height = c.height;
+    const lx = layer.getContext('2d');
+    lx.drawImage(img, 0, 0);
+    const m = document.createElement('canvas'); m.width = c.width; m.height = c.height;
+    const mx = m.getContext('2d');
+    try { mx.filter = 'blur(2px)'; } catch (e) { /* no blur support: edges stay hard */ }
+    mx.drawImage(maskCanvas, 0, 0, c.width, c.height);
+    lx.globalCompositeOperation = 'destination-in';
+    lx.drawImage(m, 0, 0);
+    lx.globalCompositeOperation = 'source-over';
+    x.drawImage(layer, 0, 0);
+    return c;
+  }
+
+  async function applyBackground() {
+    const sel = $('pp-bg').value;
+    if (sel === 'keep' || !img) { displayImg = null; draw(); updateMeta(); return; }
+    const color = sel === 'custom' ? $('pp-bgcolor').value : sel;
+    $('pp-meta').textContent = 'Preparing the background change — the background tool downloads once, then works offline.';
+    try {
+      await ensureSegmenter();
+      if (!maskCanvas || maskFor !== img) { maskCanvas = await computeMask(); maskFor = img; }
+      if (!maskCanvas) {
+        $('pp-meta').textContent = 'No person was found in this photo, so the original photo is kept.';
+        $('pp-bg').value = 'keep'; displayImg = null; draw(); return;
+      }
+      displayImg = composite(color);
+      draw(); updateMeta();
+    } catch (e) {
+      console.error('Fitly background change failed:', e);
+      $('pp-meta').textContent = 'Background change needs a connection the first time (one download, then it works offline). Your original photo is kept for now.';
+      $('pp-bg').value = 'keep'; displayImg = null; draw();
+    }
+  }
+  $('pp-bg').addEventListener('change', () => {
+    $('pp-bgcolor-wrap').hidden = $('pp-bg').value !== 'custom';
+    applyBackground();
+  });
+  $('pp-bgcolor').addEventListener('input', () => { if ($('pp-bg').value === 'custom') applyBackground(); });
+
   // ---- export the cropped photo
   function cropCanvas() {
     const p = preset();
@@ -149,7 +239,7 @@
     const g = drawGeom();
     const sx = (g.f.x - g.dx) / g.scale, sy = (g.f.y - g.dy) / g.scale;
     const sw = g.f.w / g.scale, sh = g.f.h / g.scale;
-    c.getContext('2d').drawImage(img, sx, sy, sw, sh, 0, 0, p.w, p.h);
+    c.getContext('2d').drawImage(displayImg || img, sx, sy, sw, sh, 0, 0, p.w, p.h);
     return c;
   }
 
@@ -207,7 +297,9 @@
   $('pp-dl-4x6').addEventListener('click', () => sheet(1200, 1800, 'print-4x6'));
   $('pp-dl-a4').addEventListener('click', () => sheet(2480, 3508, 'print-a4'));
   $('pp-clear').addEventListener('click', () => {
-    img = null; editor.hidden = true; emptyNote.hidden = false;
+    img = null; displayImg = null; maskCanvas = null; maskFor = null;
+    $('pp-bg').value = 'keep'; $('pp-bgcolor-wrap').hidden = true;
+    editor.hidden = true; emptyNote.hidden = false;
     ['pp-dl-photo', 'pp-dl-4x6', 'pp-dl-a4', 'pp-clear'].forEach(id => $(id).disabled = true);
     $('pp-meta').textContent = '';
   });
