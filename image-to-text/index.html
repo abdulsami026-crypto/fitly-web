@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image to text (OCR) online, free, no upload | Fitly</title>
+<meta name="description" content="Convert images between JPG, PNG and WebP in your browser. Free, batch download as ZIP, nothing is uploaded.">
+<link rel="canonical" href="https://abdulsami026-crypto.github.io/fitly-web/image-to-text/">
+<meta name="theme-color" content="#3b3bf2">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Fitly">
+<meta property="og:title" content="Image to text (OCR) online, free, no upload | Fitly"><meta property="og:description" content="Read text out of a photo or screenshot in your browser. Free, nothing uploaded."><meta property="og:url" content="https://abdulsami026-crypto.github.io/fitly-web/image-to-text/">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fitly image to text","url":"https://abdulsami026-crypto.github.io/fitly-web/image-converter/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which languages can it read?","acceptedAnswer":{"@type":"Answer","text":"English printed text, for now — signs, documents, screenshots and book pages."}},{"@type":"Question","name":"Does it read handwriting?","acceptedAnswer":{"@type":"Answer","text":"Printed text works best. Handwriting is often misread, so check the result before using it."}},{"@type":"Question","name":"Is my photo uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The reading happens inside your browser on your own device. The reading engine downloads once the first time you use it, then it works offline."}},{"@type":"Question","name":"What if the text is tilted or faint?","acceptedAnswer":{"@type":"Answer","text":"Straighten and brighten the photo first (Fitly’s crop tool can straighten it), then read it again."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a>
+  <nav class="nav" aria-label="Tools"><div class="navcat"><button class="navcat-btn" aria-expanded="false" aria-haspopup="true">Image tools<span class="car" aria-hidden="true">▾</span></button><div class="navmenu"><a href="../image-resizer/">Image resizer<span>Shrink a photo under a size limit</span></a><a href="../passport-photo-maker/">Passport photo maker<span>Exact-size ID photos, print-ready</span></a><a href="../image-converter/" aria-current="page">Image converter<span>JPG, PNG and WebP</span></a><a href="../heic-to-jpg/">HEIC to JPG<span>iPhone photos to JPG or PNG</span></a><a href="../crop-rotate/">Crop & rotate<span>Frame, straighten and save</span></a></div></div><div class="navcat"><button class="navcat-btn" aria-expanded="false" aria-haspopup="true">PDF tools<span class="car" aria-hidden="true">▾</span></button><div class="navmenu"><a href="../pdf-merge-split/">Merge & split PDF<span>Join PDFs or pull pages out</span></a><a href="../image-to-pdf/">Images to PDF<span>Photos in one tidy PDF</span></a></div></div><div class="navcat"><button class="navcat-btn" aria-expanded="false" aria-haspopup="true">Text & codes<span class="car" aria-hidden="true">▾</span></button><div class="navmenu"><a href="../qr-code-generator/">QR code generator<span>Codes for links and Wi-Fi</span></a><a href="../word-counter/">Word counter<span>Words, characters, reading time</span></a><a href="../image-to-text/" aria-current="page">Image to text<span>Read words out of a photo</span></a></div></div></nav>
+</div></header>
+<main id="main">
+
+<div class="wrap">
+  <div class="page-head"><h1>Image to text</h1><p class="lede">Drop a photo or screenshot and get its words back as text you can copy. Printed English text works best — and nothing is uploaded.</p></div>
+  
+<div class="panel" id="tool">
+  <div class="drop" id="drop" role="button" tabindex="0" aria-label="Drop a photo here or tap to choose">
+    <strong>Drop a photo here or tap to choose</strong>
+    <span>A photo, scan or screenshot with printed English text.</span>
+    <input id="file" type="file" accept="image/*" hidden>
+  </div>
+  <div id="preview" hidden>
+    <img id="pv" alt="Your photo" style="max-width:100%;max-height:320px;display:block;margin:0 auto;border-radius:8px">
+  </div>
+  <div class="bar">
+    <button class="btn" id="go" disabled>Read the text</button>
+    <button class="btn ghost" id="clear" disabled>Clear</button>
+  </div>
+  <p class="hint" id="status">The reading engine downloads once the first time you use it, then it works offline.</p>
+  <div id="outwrap" hidden>
+    <div><label for="out">Text found in your photo</label>
+      <textarea id="out" rows="10" style="width:100%"></textarea></div>
+    <p class="hint" id="counts"></p>
+    <div class="bar">
+      <button class="btn" id="copy" type="button">Copy text</button>
+      <button class="btn ghost" id="dl" type="button">Download as .txt</button>
+    </div>
+  </div>
+</div>
+<div class="prose"><h2>How to use it</h2><ol><li>Choose the format you want to convert to.</li><li>Drop your images in the box, then press Convert.</li><li>Download each file, or all of them as a ZIP.</li></ol><h2>Questions</h2><div class="faq"><details><summary>Which format should I choose?</summary><p>JPG suits photos and works everywhere. PNG keeps sharp edges and transparency. WebP gives smaller files for the web.</p></details><details><summary>What happens to transparent areas?</summary><p>PNG and WebP keep transparency. JPG cannot, so transparent areas turn white.</p></details><details><summary>Does converting to PNG reduce the file size?</summary><p>Usually not. PNG is lossless, so photos often get larger as PNG. Use JPG or WebP for smaller files.</p></details></div><h2>More tools</h2><div class="related"><a href="../image-resizer/">Image resizer</a><a href="../passport-photo-maker/">Passport photo maker</a><a href="../image-converter/">Image converter</a><a href="../heic-to-jpg/">HEIC to JPG</a><a href="../crop-rotate/">Crop &amp; rotate</a><a href="../pdf-merge-split/">Merge &amp; split PDF</a><a href="../image-to-pdf/">Images to PDF</a><a href="../image-to-text/">Image to text</a><a href="../qr-code-generator/">QR code generator</a><a href="../word-counter/">Word counter</a></div></div>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="../" style="display:flex"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a><p>Free file tools that run in your browser. Your files are processed on your device and never uploaded.</p></div>
+  <div><h3>Tools</h3><a href="../image-resizer/">Image resizer</a><a href="../passport-photo-maker/">Passport photo maker</a><a href="../image-converter/">Image converter</a><a href="../heic-to-jpg/">HEIC to JPG</a><a href="../crop-rotate/">Crop & rotate</a><a href="../pdf-merge-split/">Merge & split PDF</a><a href="../image-to-pdf/">Images to PDF</a><a href="../image-to-text/">Image to text</a><a href="../qr-code-generator/">QR code generator</a><a href="../word-counter/">Word counter</a></div>
+  <div><h3>Fitly</h3><a href="../about/">About</a><a href="../privacy/">Privacy</a><a href="../contact/">Contact</a></div>
+</div></footer>
+<script src="../js/app.js"></script>
+<script src="../js/tools/ocr.js"></script>
+<script data-goatcounter="https://fitly.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
