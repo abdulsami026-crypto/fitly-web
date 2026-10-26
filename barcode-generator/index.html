@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barcode generator online, free, no sign-up | Fitly</title>
+<meta name="description" content="Convert images between JPG, PNG and WebP in your browser. Free, batch download as ZIP, nothing is uploaded.">
+<link rel="canonical" href="https://abdulsami026-crypto.github.io/fitly-web/barcode-generator/">
+<meta name="theme-color" content="#3b3bf2">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Fitly">
+<meta property="og:title" content="Barcode generator online, free, no sign-up | Fitly"><meta property="og:description" content="Make CODE128, EAN13 and UPC barcodes in your browser and download them as SVG or PNG. Free, nothing uploaded."><meta property="og:url" content="https://abdulsami026-crypto.github.io/fitly-web/barcode-generator/">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preload" href="../fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fitly barcode generator","url":"https://abdulsami026-crypto.github.io/fitly-web/image-converter/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which barcode type should I choose?","acceptedAnswer":{"@type":"Answer","text":"CODE128 works for almost anything — labels, stock and tickets. EAN13 is for retail products, UPC for North American retail."}},{"@type":"Question","name":"Will scanners read these barcodes?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as the bars are printed large and sharp. Print at 100% size, not stretched."}},{"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The barcode is drawn inside your browser on your own device."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a>
+  <nav class="nav" aria-label="Tools"><div class="navcat"><button class="navcat-btn" aria-expanded="false" aria-haspopup="true">Image tools<span class="car" aria-hidden="true">▾</span></button><div class="navmenu"><a href="../image-resizer/">Image resizer<span>Shrink a photo under a size limit</span></a><a href="../passport-photo-maker/">Passport photo maker<span>Exact-size ID photos, print-ready</span></a><a href="../image-converter/" aria-current="page">Image converter<span>JPG, PNG and WebP</span></a><a href="../heic-to-jpg/">HEIC to JPG<span>iPhone photos to JPG or PNG</span></a><a href="../crop-rotate/">Crop & rotate<span>Frame, straighten and save</span></a><a href="../background-remover/">Background remover<span>People cut out, transparent PNG</span></a><a href="../signature-maker/">Signature maker<span>Draw or type, transparent PNG</span></a></div></div><div class="navcat"><button class="navcat-btn" aria-expanded="false" aria-haspopup="true">PDF tools<span class="car" aria-hidden="true">▾</span></button><div class="navmenu"><a href="../pdf-merge-split/">Merge & split PDF<span>Join PDFs or pull pages out</span></a><a href="../image-to-pdf/">Images to PDF<span>Photos in one tidy PDF</span></a><a href="../pdf-to-jpg/">PDF to JPG<span>Pages as JPG or PNG images</span></a><a href="../pdf-pages/">PDF pages<span>Delete, rotate, reorder pages</span></a></div></div><div class="navcat"><button class="navcat-btn" aria-expanded="false" aria-haspopup="true">Text & codes<span class="car" aria-hidden="true">▾</span></button><div class="navmenu"><a href="../qr-code-generator/">QR code generator<span>Codes for links and Wi-Fi</span></a><a href="../word-counter/">Word counter<span>Words, characters, reading time</span></a><a href="../image-to-text/">Image to text<span>Read words out of a photo</span></a><a href="../barcode-generator/" aria-current="page">Barcode generator<span>CODE128, EAN13, UPC</span></a></div></div></nav>
+</div></header>
+<main id="main">
+
+<div class="wrap">
+  <div class="page-head"><h1>Barcode generator</h1><p class="lede">Type the number or text, pick a barcode type, and download it as SVG or PNG — ready to print on a label.</p></div>
+  
+<div class="panel" id="tool">
+  <div class="fields">
+    <div><label for="val">Text or number for the barcode</label>
+      <input id="val" type="text" autocomplete="off" placeholder="e.g. 123456789012"></div>
+    <div><label for="fmt">Barcode type</label>
+      <select id="fmt"><option value="CODE128">CODE128 — anything</option><option value="EAN13">EAN13 — retail (13 digits)</option><option value="UPC">UPC — retail US (12 digits)</option><option value="CODE39">CODE39 — letters &amp; numbers</option></select></div>
+    <div><label for="w">Bar width: <span id="wv">2</span></label><input id="w" type="range" min="1" max="4" value="2"></div>
+    <div><label for="h">Height: <span id="hv">100</span>px</label><input id="h" type="range" min="40" max="200" value="100"></div>
+  </div>
+  <div class="bar">
+    <button class="btn" id="go">Make barcode</button>
+    <button class="btn ghost" id="dl-svg" disabled>Download SVG</button>
+    <button class="btn ghost" id="dl-png" disabled>Download PNG</button>
+  </div>
+  <p class="hint" id="status">EAN13 needs 12 or 13 digits; UPC needs 11 or 12 digits. CODE128 takes letters and numbers.</p>
+  <div id="out" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;overflow-x:auto">
+    <svg id="bc"></svg>
+  </div>
+</div>
+<div class="prose"><h2>How to use it</h2><ol><li>Choose the format you want to convert to.</li><li>Drop your images in the box, then press Convert.</li><li>Download each file, or all of them as a ZIP.</li></ol><h2>Questions</h2><div class="faq"><details><summary>Which format should I choose?</summary><p>JPG suits photos and works everywhere. PNG keeps sharp edges and transparency. WebP gives smaller files for the web.</p></details><details><summary>What happens to transparent areas?</summary><p>PNG and WebP keep transparency. JPG cannot, so transparent areas turn white.</p></details><details><summary>Does converting to PNG reduce the file size?</summary><p>Usually not. PNG is lossless, so photos often get larger as PNG. Use JPG or WebP for smaller files.</p></details></div><h2>More tools</h2><div class="related"><a href="../image-resizer/">Image resizer</a><a href="../passport-photo-maker/">Passport photo maker</a><a href="../image-converter/">Image converter</a><a href="../heic-to-jpg/">HEIC to JPG</a><a href="../crop-rotate/">Crop &amp; rotate</a><a href="../background-remover/">Background remover</a><a href="../signature-maker/">Signature maker</a><a href="../pdf-merge-split/">Merge &amp; split PDF</a><a href="../image-to-pdf/">Images to PDF</a><a href="../pdf-to-jpg/">PDF to JPG</a><a href="../pdf-pages/">PDF pages</a><a href="../image-to-text/">Image to text</a><a href="../qr-code-generator/">QR code generator</a><a href="../barcode-generator/">Barcode generator</a><a href="../word-counter/">Word counter</a></div></div>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="../" style="display:flex"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#3b3bf2"/><path d="M9 13V9h4M23 13V9h-4M9 19v4h4M23 19v4h-4" fill="none" stroke="#c9f26b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitly</a><p>Free file tools that run in your browser. Your files are processed on your device and never uploaded.</p></div>
+  <div><h3>Tools</h3><a href="../image-resizer/">Image resizer</a><a href="../passport-photo-maker/">Passport photo maker</a><a href="../image-converter/">Image converter</a><a href="../heic-to-jpg/">HEIC to JPG</a><a href="../crop-rotate/">Crop & rotate</a><a href="../background-remover/">Background remover</a><a href="../signature-maker/">Signature maker</a><a href="../pdf-merge-split/">Merge & split PDF</a><a href="../image-to-pdf/">Images to PDF</a><a href="../pdf-to-jpg/">PDF to JPG</a><a href="../pdf-pages/">PDF pages</a><a href="../image-to-text/">Image to text</a><a href="../qr-code-generator/">QR code generator</a><a href="../barcode-generator/">Barcode generator</a><a href="../word-counter/">Word counter</a></div>
+  <div><h3>Fitly</h3><a href="../about/">About</a><a href="../privacy/">Privacy</a><a href="../contact/">Contact</a></div>
+</div></footer>
+<script src="../js/app.js"></script><script src="../js/vendor/jsbarcode.min.js"></script>
+<script src="../js/tools/barcode.js"></script>
+<script data-goatcounter="https://fitly.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
