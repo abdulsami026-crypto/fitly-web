@@ -514,3 +514,7 @@ body.landing .navmenu a{color:var(--ink)}
 .pgcard .nm{font-weight:600;font-size:14px;margin-bottom:8px}
 .pgcard .acts{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .pgcard .acts .btn{padding:6px 10px;font-size:13px}
+
+/* landing v6: fifteen tools — tab list in two columns so the hero stays compact */
+body.landing .tabs{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;margin:0 0 26px}
+@media (max-width:760px){body.landing .tabs{grid-template-columns:1fr}}

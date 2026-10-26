@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fitly: image resizer and free file tools that run in your browser</title>
-<meta name="description" content="Free file tools that run in your browser and never upload your files: resize photos to an exact KB limit without cropping, convert images, make PDFs and QR codes, count words.">
+<meta name="description" content="Free file tools that run in your browser and never upload your files: resize photos to an exact KB limit without cropping, convert images, make PDFs and QR codes, count words, remove photo backgrounds, read text from photos, and make barcodes and signatures.">
 <link rel="canonical" href="https://abdulsami026-crypto.github.io/fitly-web/">
 <meta name="theme-color" content="#3a54e8">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Fitly">
 <meta property="og:title" content="Fitly: image resizer and free file tools that run in your browser"><meta property="og:description" content="Free file tools that run in your browser and never upload your files: resize photos to an exact KB limit without cropping, convert images, make PDFs and QR codes, count words."><meta property="og:url" content="https://abdulsami026-crypto.github.io/fitly-web/">
 <meta property="og:image" content="https://abdulsami026-crypto.github.io/fitly-web/og.png">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Fitly: file tools that never upload your files"><meta name="twitter:description" content="Resize photos to an exact KB limit without cropping, convert images, make PDFs and QR codes, count words. Free, in your browser, nothing uploaded."><meta name="twitter:image" content="https://abdulsami026-crypto.github.io/fitly-web/og.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Fitly: file tools that never upload your files"><meta name="twitter:description" content="Resize photos to an exact KB limit without cropping, convert images, make PDFs and QR codes, count words, remove photo backgrounds, read text from photos, and make barcodes and signatures. Free, in your browser, nothing uploaded."><meta name="twitter:image" content="https://abdulsami026-crypto.github.io/fitly-web/og.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
@@ -35,7 +35,7 @@
     <div>
       <span class="badge"><i></i>100% in your browser — no server involved</span>
       <h1>Fit the file.<br><span class="u">Skip</span> the <span class="hl">upload.</span></h1>
-      <p class="lede">Seven everyday tools. One promise: your files never leave your device. Pick any tool in the list and watch it work in the window.</p>
+      <p class="lede">Everyday tools for your files. One promise: your files never leave your device. Pick any tool in the list and watch it work in the window.</p>
 
       <div class="tabs" role="tablist" aria-label="Fitly tools showcase">
         <button class="tab" role="tab" aria-selected="true" data-pane="0"><span class="n">01</span><span class="t">Image resizer</span><span class="d">Shrink any photo to the exact KB a form demands — full picture kept, nothing cropped.</span></button>
@@ -45,9 +45,17 @@
         <button class="tab" role="tab" aria-selected="false" data-pane="4"><span class="n">05</span><span class="t">Word counter</span><span class="d">Words, characters and reading time, counted live as you type.</span></button>
         <button class="tab" role="tab" aria-selected="false" data-pane="5"><span class="n">06</span><span class="t">Passport photo maker</span><span class="d">Exact-size ID photos at print quality, plus sheets of copies for the printer.</span></button>
         <button class="tab" role="tab" aria-selected="false" data-pane="6"><span class="n">07</span><span class="t">Merge &amp; split PDF</span><span class="d">Join several PDFs into one, or pull pages out into a new PDF.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="7"><span class="n">08</span><span class="t">HEIC to JPG</span><span class="d">iPhone photos to JPG or PNG — a whole batch in one ZIP.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="8"><span class="n">09</span><span class="t">Crop &amp; rotate</span><span class="d">Frame it straight, turn it upright, save it at full size.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="9"><span class="n">10</span><span class="t">Image to text</span><span class="d">Words read out of any photo, ready to copy and paste.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="10"><span class="n">11</span><span class="t">Background remover</span><span class="d">People cut out of a photo, background gone, transparent PNG.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="11"><span class="n">12</span><span class="t">PDF to JPG</span><span class="d">Every PDF page as a sharp JPG or PNG image.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="12"><span class="n">13</span><span class="t">PDF pages</span><span class="d">Delete, rotate and reorder the pages of a PDF.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="13"><span class="n">14</span><span class="t">Barcode generator</span><span class="d">CODE128, EAN13 and UPC barcodes, ready to print.</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-pane="14"><span class="n">15</span><span class="t">Signature maker</span><span class="d">Draw or type your signature, download it as a transparent PNG.</span></button>
       </div>
 
-      <ul class="trust"><li>No uploads</li><li>Nothing cropped</li><li>Works offline</li></ul>
+      <ul class="trust"><li>No uploads</li><li>Nothing cropped</li><li>Works offline</li><li>Free forever</li></ul>
     </div>
 
     <div class="showwrap">
@@ -141,6 +149,85 @@
             </div>
             <div class="show-foot"><span>merged.pdf · 6 pages · in your order</span><span class="btn">Download PDF</span></div>
           </div>
+          <div class="pane" aria-hidden="true">
+            <div class="seg"><span>HEIC</span><span class="on">JPG</span><span>PNG</span></div>
+            <div class="conv-row"><span class="from">IMG_2041.heic</span><span class="arr">→</span><span class="to">IMG_2041.jpg</span><span class="sz">2.1 MB → <b>640 KB</b></span></div>
+            <div class="conv-row"><span class="from">IMG_2042.heic</span><span class="arr">→</span><span class="to">IMG_2042.jpg</span><span class="sz">1.8 MB → <b>512 KB</b></span></div>
+            <div class="show-foot"><span>2 iPhone photos converted</span><span class="btn">Download all as ZIP</span></div>
+          </div>
+
+          <div class="pane" aria-hidden="true">
+            <div style="display:flex;gap:18px;align-items:center">
+              <div style="flex:none;width:150px;border:2.5px solid #b9e356;border-radius:8px;overflow:hidden">
+                <svg viewBox="0 0 100 74" style="display:block;width:100%"><rect width="100" height="74" fill="#dfe8fa"/><circle cx="72" cy="16" r="9" fill="#b9e356"/><path d="M0 60 L28 34 L48 52 L66 38 L100 62 L100 74 L0 74 Z" fill="#111a29" opacity=".55"/></svg>
+              </div>
+              <div style="flex:1">
+                <div class="nm" style="margin-bottom:8px">holiday.jpg</div>
+                <div class="fmtrow" style="margin-bottom:10px"><span class="on">1:1</span><span>4:3</span><span>16:9</span></div>
+                <div class="mt"><b>Full resolution</b> · straightened · flipped</div>
+              </div>
+            </div>
+            <div class="show-foot"><span>Framed by you, saved full-size</span><span class="btn">Download photo</span></div>
+          </div>
+
+          <div class="pane" aria-hidden="true">
+            <div style="display:flex;gap:18px;align-items:flex-start">
+              <div style="flex:none;width:110px;border-radius:8px;overflow:hidden">
+                <svg viewBox="0 0 100 74" style="display:block;width:100%"><rect width="100" height="74" fill="#eef1f7"/><rect x="12" y="12" width="76" height="6" rx="3" fill="#c3cde0"/><rect x="12" y="26" width="76" height="6" rx="3" fill="#c3cde0"/><rect x="12" y="40" width="52" height="6" rx="3" fill="#c3cde0"/></svg>
+              </div>
+              <div style="flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px">
+                <div class="nm" style="margin-bottom:6px">Read from the photo</div>
+                <div class="mt" style="line-height:1.6">“Shop opens at 9am.<br>Fresh bread every morning.”</div>
+              </div>
+            </div>
+            <div class="show-foot"><span>Text you can copy and search</span><span class="btn">Copy text</span></div>
+          </div>
+
+          <div class="pane" aria-hidden="true">
+            <div style="display:flex;gap:18px;align-items:center">
+              <div style="flex:none;width:110px;border-radius:8px;overflow:hidden">
+                <svg viewBox="0 0 100 128" style="display:block;width:100%"><rect width="100" height="128" fill="#dfe8fa"/><ellipse cx="50" cy="52" rx="21" ry="26" fill="#c8986c"/><path d="M14 128c4-26 18-38 36-38s32 12 36 38z" fill="#111a29" opacity=".82"/></svg>
+              </div>
+              <span style="font-size:22px;font-weight:700;color:#3a54e8">→</span>
+              <div style="flex:none;width:110px;border-radius:8px;overflow:hidden;background:repeating-conic-gradient(#f2f4f8 0% 25%, #fff 0% 50%) 0 0/16px 16px">
+                <svg viewBox="0 0 100 128" style="display:block;width:100%"><ellipse cx="50" cy="52" rx="21" ry="26" fill="#c8986c"/><path d="M14 128c4-26 18-38 36-38s32 12 36 38z" fill="#111a29" opacity=".82"/></svg>
+              </div>
+              <div class="mt" style="flex:1">Background gone.<br><b>Transparent PNG</b>, full size.</div>
+            </div>
+            <div class="show-foot"><span>Ready for any background</span><span class="btn">Download PNG</span></div>
+          </div>
+
+          <div class="pane" aria-hidden="true">
+            <div class="pages-row">
+              <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#dfe8fa"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#3a54e8"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="64" height="7" rx="3.5" fill="#c3cde0"/></svg><div class="cap">Page 1 · JPG</div></div>
+              <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#eef1f7"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#111a29"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="44" height="7" rx="3.5" fill="#c3cde0"/></svg><div class="cap">Page 2 · JPG</div></div>
+              <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#f7e9c8"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#b9e356"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="56" height="7" rx="3.5" fill="#c3cde0"/></svg><div class="cap">Page 3 · JPG</div></div>
+            </div>
+            <div class="show-foot"><span>report.pdf · 3 pages · sharp images</span><span class="btn">Download all as ZIP</span></div>
+          </div>
+
+          <div class="pane" aria-hidden="true">
+            <div class="pages-row">
+              <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#dfe8fa"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#3a54e8"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="64" height="7" rx="3.5" fill="#c3cde0"/></svg><div class="cap">Page 1 · kept</div></div>
+              <div class="pg" style="transform:rotate(90deg) scale(.72)"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#eef1f7"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#111a29"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="44" height="7" rx="3.5" fill="#c3cde0"/></svg><div class="cap">Page 2 · turned</div></div>
+              <div class="pg" style="opacity:.4"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#f7e9c8"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#b9e356"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="56" height="7" rx="3.5" fill="#c3cde0"/></svg><div class="cap">Page 3 · deleted</div></div>
+            </div>
+            <div class="show-foot"><span>report-edited.pdf · 2 pages · in your order</span><span class="btn">Download PDF</span></div>
+          </div>
+
+          <div class="pane" aria-hidden="true">
+            <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;text-align:center">
+              <svg viewBox="0 0 200 60" style="width:220px;max-width:100%"><rect x="0" y="8" width="3" height="44" fill="#111a29"/><rect x="7" y="8" width="1.5" height="44" fill="#111a29"/><rect x="12" y="8" width="5" height="44" fill="#111a29"/><rect x="21" y="8" width="2" height="44" fill="#111a29"/><rect x="27" y="8" width="1.5" height="44" fill="#111a29"/><rect x="33" y="8" width="4" height="44" fill="#111a29"/><rect x="41" y="8" width="2" height="44" fill="#111a29"/><rect x="47" y="8" width="6" height="44" fill="#111a29"/><rect x="57" y="8" width="1.5" height="44" fill="#111a29"/><rect x="62" y="8" width="3" height="44" fill="#111a29"/><rect x="69" y="8" width="2" height="44" fill="#111a29"/><rect x="75" y="8" width="5" height="44" fill="#111a29"/><rect x="84" y="8" width="1.5" height="44" fill="#111a29"/><rect x="90" y="8" width="3" height="44" fill="#111a29"/><rect x="97" y="8" width="2" height="44" fill="#111a29"/><rect x="103" y="8" width="4" height="44" fill="#111a29"/><rect x="111" y="8" width="1.5" height="44" fill="#111a29"/><rect x="117" y="8" width="6" height="44" fill="#111a29"/><rect x="127" y="8" width="2" height="44" fill="#111a29"/><rect x="133" y="8" width="3" height="44" fill="#111a29"/><rect x="140" y="8" width="1.5" height="44" fill="#111a29"/><rect x="146" y="8" width="5" height="44" fill="#111a29"/><rect x="155" y="8" width="2" height="44" fill="#111a29"/><rect x="161" y="8" width="4" height="44" fill="#111a29"/><rect x="169" y="8" width="1.5" height="44" fill="#111a29"/><rect x="175" y="8" width="3" height="44" fill="#111a29"/><rect x="182" y="8" width="2" height="44" fill="#111a29"/><rect x="189" y="8" width="5" height="44" fill="#111a29"/><text x="100" y="58" font-size="7" text-anchor="middle" fill="#111a29">1 2 3 4 5 6 7 8 9 0 1 2</text></svg>
+            </div>
+            <div class="show-foot"><span>EAN13 · print-crisp SVG or PNG</span><span class="btn">Download barcode</span></div>
+          </div>
+
+          <div class="pane" aria-hidden="true">
+            <div style="background:repeating-conic-gradient(#f2f4f8 0% 25%, #fff 0% 50%) 0 0/20px 20px;border:1px solid var(--line);border-radius:10px;padding:26px;text-align:center">
+              <span style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:44px;color:#111a29">Abdul Sami</span>
+            </div>
+            <div class="show-foot"><span>Transparent PNG · no background</span><span class="btn">Download signature</span></div>
+          </div>
 
         </div>
       </div>
@@ -152,6 +239,14 @@
         <button aria-current="false" data-pane="4" aria-label="Word counter"><i></i></button>
         <button aria-current="false" data-pane="5" aria-label="Passport photo"><i></i></button>
         <button aria-current="false" data-pane="6" aria-label="Merge and split"><i></i></button>
+        <button aria-current="false" data-pane="7" aria-label="HEIC to JPG"><i></i></button>
+        <button aria-current="false" data-pane="8" aria-label="Crop and rotate"><i></i></button>
+        <button aria-current="false" data-pane="9" aria-label="Image to text"><i></i></button>
+        <button aria-current="false" data-pane="10" aria-label="Background remover"><i></i></button>
+        <button aria-current="false" data-pane="11" aria-label="PDF to JPG"><i></i></button>
+        <button aria-current="false" data-pane="12" aria-label="PDF pages"><i></i></button>
+        <button aria-current="false" data-pane="13" aria-label="Barcode generator"><i></i></button>
+        <button aria-current="false" data-pane="14" aria-label="Signature maker"><i></i></button>
       </div>
     </div>
   </div>
@@ -172,7 +267,7 @@
 <section class="meet" id="meet"><div class="wrap">
   <div class="meet-head">
     <h2>Meet the tools</h2>
-    <p>Seven small tools, each built for one job people do every day — usually while a form waits, half filled, on their phone.</p>
+    <p>Small tools, each built for one job people do every day — usually while a form waits, half filled, on their phone.</p>
   </div>
 
   <div class="toolrow">
@@ -287,6 +382,127 @@
       </div>
       <p class="cap">Three files in, one merged PDF out — in your order.</p>
     </div>
+
+  <div class="toolrow flip">
+    <div>
+      <div class="tn">08</div><h3>HEIC to JPG</h3>
+      <p class="td">iPhone photos arrive as HEIC, which most forms and sites won't accept. Drop them in and get JPG or PNG back — one photo or a whole batch, zipped together.</p>
+      <p class="goodfor"><b>Good for</b><span>iPhone photos for portals, uploads and sharing anywhere.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div class="seg"><span>HEIC</span><span class="on">JPG</span><span>PNG</span></div>
+      <div class="conv-row"><span class="from">IMG_2041.heic</span><span class="arr">→</span><span class="to">IMG_2041.jpg</span><span class="sz">2.1 MB → <b>640 KB</b></span></div>
+      <div class="conv-row"><span class="from">IMG_2042.heic</span><span class="arr">→</span><span class="to">IMG_2042.jpg</span><span class="sz">1.8 MB → <b>512 KB</b></span></div>
+      <p class="cap">The format portals accept, from the photos your phone actually takes.</p>
+    </div>
+  </div>
+
+  <div class="toolrow">
+    <div>
+      <div class="tn">09</div><h3>Crop &amp; rotate</h3>
+      <p class="td">Drag the photo under the frame, pick the shape — square, 4:3, 16:9 — straighten a tilted shot, flip it if it came out mirrored. And the result is saved at full resolution, never a shrunken copy.</p>
+      <p class="goodfor"><b>Good for</b><span>Profile photos, listings, and photos that came out sideways.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div style="border:2.5px solid #b9e356;border-radius:8px;overflow:hidden">
+        <svg viewBox="0 0 200 120" style="display:block;width:100%"><rect width="200" height="120" fill="#dfe8fa"/><circle cx="150" cy="26" r="14" fill="#b9e356"/><path d="M0 96 L56 54 L96 84 L132 60 L200 100 L200 120 L0 120 Z" fill="#111a29" opacity=".55"/></svg>
+      </div>
+      <p class="cap">Frame it, straighten it, keep every pixel.</p>
+    </div>
+  </div>
+
+  <div class="toolrow flip">
+    <div>
+      <div class="tn">10</div><h3>Image to text</h3>
+      <p class="td">A photo of a page, a sign, a receipt or a handwritten note — the words come out as text you can copy, search and paste anywhere. No retyping, no mistakes from reading it yourself.</p>
+      <p class="goodfor"><b>Good for</b><span>Notes, receipts, signs and pages you can't retype.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div class="doc"><div class="ln"></div><div class="ln m"></div><div class="ln"></div><div class="ln s"></div></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:10px">
+        <div class="mt" style="line-height:1.6">“Shop opens at 9am.<br>Fresh bread every morning.”</div>
+      </div>
+      <p class="cap">From a photo to text you can actually use.</p>
+    </div>
+  </div>
+
+  <div class="toolrow">
+    <div>
+      <div class="tn">11</div><h3>Background remover</h3>
+      <p class="td">A photo of a person, cut out cleanly, on a transparent background — ready to place on a poster, a listing photo or a new scene. The same cutting engine as the passport tool, pointed at any photo.</p>
+      <p class="goodfor"><b>Good for</b><span>Product listings, posters, profile pictures and designs.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div style="display:flex;gap:12px;align-items:center">
+        <svg viewBox="0 0 100 128" style="display:block;width:46%;border-radius:6px"><rect width="100" height="128" fill="#dfe8fa"/><ellipse cx="50" cy="52" rx="21" ry="26" fill="#c8986c"/><path d="M14 128c4-26 18-38 36-38s32 12 36 38z" fill="#111a29" opacity=".82"/></svg>
+        <span style="font-size:20px;font-weight:700;color:#3a54e8">→</span>
+        <div style="width:46%;border-radius:6px;overflow:hidden;background:repeating-conic-gradient(#f2f4f8 0% 25%, #fff 0% 50%) 0 0/16px 16px">
+          <svg viewBox="0 0 100 128" style="display:block;width:100%"><ellipse cx="50" cy="52" rx="21" ry="26" fill="#c8986c"/><path d="M14 128c4-26 18-38 36-38s32 12 36 38z" fill="#111a29" opacity=".82"/></svg>
+        </div>
+      </div>
+      <p class="cap">Background gone — the person, on nothing, ready for anything.</p>
+    </div>
+  </div>
+
+  <div class="toolrow flip">
+    <div>
+      <div class="tn">12</div><h3>PDF to JPG</h3>
+      <p class="td">Every page of a PDF becomes a sharp JPG or PNG image, in order. Download one page on its own, or the whole document as a ZIP.</p>
+      <p class="goodfor"><b>Good for</b><span>Sharing a single page as an image, posting documents, slides and scans.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div class="pages-row">
+        <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#dfe8fa"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#3a54e8"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="64" height="7" rx="3.5" fill="#c3cde0"/></svg><div class="cap">Page 1 · JPG</div></div>
+        <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#eef1f7"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#111a29"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="44" height="7" rx="3.5" fill="#c3cde0"/></svg><div class="cap">Page 2 · JPG</div></div>
+        <div class="pg"><svg viewBox="0 0 100 74"><rect width="100" height="74" fill="#f7e9c8"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#b9e356"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="56" height="7" rx="3.5" fill="#c3cde0"/></svg><div class="cap">Page 3 · JPG</div></div>
+      </div>
+      <p class="cap">report.pdf · 3 pages · sharp images, twice normal size.</p>
+    </div>
+  </div>
+
+  <div class="toolrow">
+    <div>
+      <div class="tn">13</div><h3>PDF pages</h3>
+      <p class="td">Open a PDF and throw out the pages you don't need, turn the sideways ones upright, and put the rest in the order you want — then download the edited PDF.</p>
+      <p class="goodfor"><b>Good for</b><span>Cleaning up scans and fixing a document before you send it.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div style="display:flex;gap:8px;align-items:flex-end">
+        <svg viewBox="0 0 100 74" style="display:block;width:32%;border-radius:4px"><rect width="100" height="74" fill="#dfe8fa"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#3a54e8"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="64" height="7" rx="3.5" fill="#c3cde0"/></svg>
+        <svg viewBox="0 0 100 74" style="display:block;width:32%;border-radius:4px;transform:rotate(90deg) scale(.72)"><rect width="100" height="74" fill="#eef1f7"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#111a29"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="44" height="7" rx="3.5" fill="#c3cde0"/></svg>
+        <svg viewBox="0 0 100 74" style="display:block;width:32%;border-radius:4px;opacity:.4"><rect width="100" height="74" fill="#f7e9c8"/><rect x="18" y="10" width="64" height="7" rx="3.5" fill="#b9e356"/><rect x="18" y="24" width="64" height="7" rx="3.5" fill="#c3cde0"/><rect x="18" y="38" width="56" height="7" rx="3.5" fill="#c3cde0"/></svg>
+      </div>
+      <p class="cap">Kept, turned, deleted — then one clean PDF out.</p>
+    </div>
+  </div>
+
+  <div class="toolrow flip">
+    <div>
+      <div class="tn">14</div><h3>Barcode generator</h3>
+      <p class="td">CODE128, EAN13 and UPC barcodes from any number or text — downloaded as an SVG that stays sharp at any print size, or a PNG for screens.</p>
+      <p class="goodfor"><b>Good for</b><span>Shop labels, stock, tickets and parcels.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center">
+        <svg viewBox="0 0 200 60" style="width:220px;max-width:100%"><rect x="0" y="8" width="3" height="44" fill="#111a29"/><rect x="7" y="8" width="1.5" height="44" fill="#111a29"/><rect x="12" y="8" width="5" height="44" fill="#111a29"/><rect x="21" y="8" width="2" height="44" fill="#111a29"/><rect x="27" y="8" width="1.5" height="44" fill="#111a29"/><rect x="33" y="8" width="4" height="44" fill="#111a29"/><rect x="41" y="8" width="2" height="44" fill="#111a29"/><rect x="47" y="8" width="6" height="44" fill="#111a29"/><rect x="57" y="8" width="1.5" height="44" fill="#111a29"/><rect x="62" y="8" width="3" height="44" fill="#111a29"/><rect x="69" y="8" width="2" height="44" fill="#111a29"/><rect x="75" y="8" width="5" height="44" fill="#111a29"/><rect x="84" y="8" width="1.5" height="44" fill="#111a29"/><rect x="90" y="8" width="3" height="44" fill="#111a29"/><rect x="97" y="8" width="2" height="44" fill="#111a29"/><rect x="103" y="8" width="4" height="44" fill="#111a29"/><rect x="111" y="8" width="1.5" height="44" fill="#111a29"/><rect x="117" y="8" width="6" height="44" fill="#111a29"/><rect x="127" y="8" width="2" height="44" fill="#111a29"/><rect x="133" y="8" width="3" height="44" fill="#111a29"/><rect x="140" y="8" width="1.5" height="44" fill="#111a29"/><rect x="146" y="8" width="5" height="44" fill="#111a29"/><rect x="155" y="8" width="2" height="44" fill="#111a29"/><rect x="161" y="8" width="4" height="44" fill="#111a29"/><rect x="169" y="8" width="1.5" height="44" fill="#111a29"/><rect x="175" y="8" width="3" height="44" fill="#111a29"/><rect x="182" y="8" width="2" height="44" fill="#111a29"/><rect x="189" y="8" width="5" height="44" fill="#111a29"/><text x="100" y="58" font-size="7" text-anchor="middle" fill="#111a29">1 2 3 4 5 6 7 8 9 0 1 2</text></svg>
+      </div>
+      <p class="cap">Print it on a label — any scanner reads it.</p>
+    </div>
+  </div>
+
+  <div class="toolrow">
+    <div>
+      <div class="tn">15</div><h3>Signature maker</h3>
+      <p class="td">Draw your signature with a mouse or finger, or type it in a handwriting style — and download it as a transparent PNG that sits cleanly on any document or form.</p>
+      <p class="goodfor"><b>Good for</b><span>Signing forms, contracts and letters without printing anything.</span></p>
+    </div>
+    <div class="vis" aria-hidden="true">
+      <div style="background:repeating-conic-gradient(#f2f4f8 0% 25%, #fff 0% 50%) 0 0/20px 20px;border:1px solid var(--line);border-radius:10px;padding:26px;text-align:center">
+        <span style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:44px;color:#111a29">Abdul Sami</span>
+      </div>
+      <p class="cap">The checkerboard means transparent — no background at all.</p>
+    </div>
+  </div>
   </div></section>
 
 <section class="cmp"><div class="wrap">
@@ -301,6 +517,7 @@
       <tr><td class="rowlab">Watermark</td><td>On free results, removed only if you pay</td><td class="fit">Never added</td></tr>
       <tr><td class="rowlab">Fit an exact KB limit</td><td>Guesswork — compress and hope</td><td class="fit">Set the limit; it fits under it</td></tr>
       <tr><td class="rowlab">Many files at once</td><td>One at a time, or a paid plan</td><td class="fit">Batch, returned as one ZIP</td></tr>
+      <tr><td class="rowlab">Beyond resizing</td><td>One job per site, or a paid bundle</td><td class="fit">Photos, PDFs, codes and signatures in one place</td></tr>
     </tbody>
   </table>
 </div></section>
@@ -323,13 +540,15 @@
     <div class="job"><div class="jn">04</div><h3>A JPG the portal accepts</h3><p>The site takes JPG only and your screenshot is PNG. Converted in seconds, same picture.</p></div>
     <div class="job"><div class="jn">05</div><h3>An answer in 500 words</h3><p>Application answers and essays counted live, so the limit never catches you at the end.</p></div>
     <div class="job"><div class="jn">06</div><h3>An ID photo under 50 KB</h3><p>Small enough for the strictest form, with the face and frame exactly as you shot them.</p></div>
+    <div class="job"><div class="jn">07</div><h3>A product photo with no background</h3><p>A listing photo cut out clean, ready to sit on any background.</p></div>
+    <div class="job"><div class="jn">08</div><h3>A signature on a form</h3><p>Sign a document without printing it — draw or type, download a transparent PNG.</p></div>
   </div>
 </div></section>
 
 <section class="howfaq"><div class="wrap">
   <div>
     <h2>How it works</h2>
-    <div class="step"><span class="sn">1</span><div><h3>Open a tool from the top menu</h3><p>Seven tools, one menu. No account, no download, nothing to install.</p></div></div>
+    <div class="step"><span class="sn">1</span><div><h3>Open a tool from the top menu</h3><p>Every tool in one menu. No account, no download, nothing to install.</p></div></div>
     <div class="step"><span class="sn">2</span><div><h3>Add your file and set what you need</h3><p>A size limit, a format, a page order. The work happens right there in the page, on your device.</p></div></div>
     <div class="step"><span class="sn">3</span><div><h3>Download the result</h3><p>One file, or a whole batch in a single ZIP. Your original stays untouched, exactly where it was.</p></div></div>
   </div>
@@ -339,7 +558,9 @@
     <details><summary>Where do my files go?</summary><p>Nowhere. Fitly has no server for your files to go to. Everything is processed by your own browser, on your own device, which is also why it works offline.</p></details>
     <details><summary>Does it work on my phone?</summary><p>Yes — Fitly is built phone-first, because most people meet a size limit while filling a form on their phone. It works the same on a computer.</p></details>
     <details><summary>Will a resized photo still look sharp?</summary><p>Fitly lowers quality gently before it ever touches dimensions, and stops the moment the file fits. At the size forms display photos, the result looks the same.</p></details>
-    <details><summary>Which formats can I use?</summary><p>JPG, PNG and WebP for images. The PDF tool turns images into PDF documents, and the QR generator gives you PNG or SVG codes.</p></details>
+    <details><summary>Does the background remover work on any photo?</summary><p>It finds people in a photo and removes everything behind them. It does not cut out objects or animals yet — for those, the crop tool frames what you want instead.</p></details>
+    <details><summary>Can I use my signature on official forms?</summary><p>The signature maker gives you an image of your signature with a transparent background. Whether a particular form accepts an image signature depends on that form — many online forms do, some still ask for ink on paper.</p></details>
+    <details><summary>Which formats can I use?</summary><p>JPG, PNG and WebP for images, plus HEIC to JPG for iPhone photos. The PDF tools turn images into PDFs, convert PDF pages to images, and rearrange PDF pages. The QR and barcode generators give you PNG or SVG codes.</p></details>
   </div>
 </div></section>
 
@@ -377,8 +598,8 @@
   const tabs=[...document.querySelectorAll('.tab')], panes=[...document.querySelectorAll('.pane')],
         pips=[...document.querySelectorAll('.pips button')], pill=document.getElementById('floatpill'),
         url=document.getElementById('urlpill'), box=document.getElementById('showcase');
-  const names=['fitly · image resizer','fitly · image converter','fitly · images to PDF','fitly · QR code generator','fitly · word counter','fitly · passport photo maker','fitly · merge & split PDF'];
-  const pills=['<b>187 KB</b> · fits','<b>−87%</b> · smaller','<b>3 pages</b> · one PDF','<b>PNG · SVG</b> · ready','<b>248</b> · words','<b>413 × 531</b> · exact size','<b>6 pages</b> · merged'];
+  const names=['fitly · image resizer','fitly · image converter','fitly · images to PDF','fitly · QR code generator','fitly · word counter','fitly · passport photo maker','fitly · merge & split PDF','fitly · HEIC to JPG','fitly · crop & rotate','fitly · image to text','fitly · background remover','fitly · PDF to JPG','fitly · PDF pages','fitly · barcode generator','fitly · signature maker'];
+  const pills=['<b>187 KB</b> · fits','<b>−87%</b> · smaller','<b>3 pages</b> · one PDF','<b>PNG · SVG</b> · ready','<b>248</b> · words','<b>413 × 531</b> · exact size','<b>6 pages</b> · merged','<b>HEIC → JPG</b> · batch','<b>Full res</b> · framed','<b>Text</b> · copied','<b>Transparent</b> · PNG','<b>3 pages</b> · images','<b>Pages</b> · arranged','<b>EAN13</b> · printable','<b>Transparent</b> · PNG'];
   let cur=0, timer=null;
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function go(i){
