@@ -275,7 +275,7 @@ body.landing .pill{font-size:12.5px;font-weight:700;background:var(--lime);paddi
 body.landing .file{display:grid;grid-template-columns:76px 1fr auto;gap:14px;align-items:center;padding:13px 0;border-top:1px solid var(--line)}
 body.landing .file:first-of-type{border-top:0}
 body.landing .thumb{width:76px;height:58px;border-radius:9px;overflow:hidden;display:block;background:var(--paper)}
-body.landing .thumb svg{display:block;width:76px;height:58px}
+body.landing .thumbs .thumb svg{display:block;width:76px;height:58px}
 body.landing .nm{font-weight:600;line-height:1.3;font-size:15px}
 body.landing .gauge{position:relative;height:10px;border-radius:99px;background:var(--line);margin:27px 0 2px}
 body.landing .gauge i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;display:block}
@@ -291,11 +291,13 @@ body.landing .show-foot{display:flex;justify-content:space-between;align-items:c
 body.landing .show-foot .btn{cursor:default;padding:10px 16px;font-size:14px}
 body.landing .floatpill{position:absolute;top:-18px;right:26px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;padding:8px 15px;border-radius:99px;transform:rotate(-2.5deg);box-shadow:0 8px 20px rgba(14,26,43,.22);z-index:2}
 body.landing .floatpill b{color:var(--lime)}
-body.landing .pips{display:flex;gap:7px;justify-content:center;margin-top:22px}
-body.landing .pips button{width:30px;height:5px;border-radius:99px;border:0;background:#c3cde0;cursor:pointer;padding:0;position:relative;overflow:hidden}
-body.landing .pips button i{position:absolute;inset:0;background:var(--blue);border-radius:99px;transform:scaleX(0);transform-origin:left}
-body.landing .pips button[aria-current="true"] i{animation:pipfill 4.2s linear forwards}
-body.landing .showwrap:hover .pips button i{animation-play-state:paused}
+body.landing .thumbs{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+body.landing .thumbs .thumb{flex:1 1 32px;min-width:0;height:46px;border:1.5px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;padding:4px;position:relative;overflow:hidden}
+body.landing .thumbs .thumb svg{display:block;width:100%;height:100%}
+body.landing .thumbs .thumb[aria-current="true"]{border-color:var(--ink);box-shadow:0 0 0 2px var(--lime)}
+body.landing .thumbs .thumb i{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--blue);transform:scaleX(0);transform-origin:left}
+body.landing .thumbs .thumb[aria-current="true"] i{animation:pipfill 4.2s linear forwards}
+body.landing .showwrap:hover .thumbs .thumb i{animation-play-state:paused}
 @keyframes pipfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 body.landing /* section 2: the promise */
 .why{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -437,6 +439,8 @@ body.landing .stat{background:var(--paper);border-radius:10px;padding:11px 13px}
 body.landing .stat b{display:block;font-family:var(--display);font-size:1.55rem;line-height:1.1;letter-spacing:-.02em}
 body.landing .stat span{font-size:12.5px;color:var(--mut)}
 @media (max-width:920px){body.landing .hero .wrap{grid-template-columns:1fr;gap:46px;padding-top:46px;padding-bottom:60px}
+@media (max-width:920px){body.landing .toolrow{grid-template-columns:1fr;gap:22px;padding:32px 0}
+body.landing .toolrow.flip .vis{order:0}}
 body.landing .hero .dots{display:none}
 body.landing .ubar .r{display:none}
 body.landing .top .acts .ghost{display:none}
@@ -446,14 +450,13 @@ body.landing .howfaq .wrap{grid-template-columns:1fr;gap:44px}
 body.landing .off .wrap{grid-template-columns:1fr;gap:20px}
 body.landing table.vs th, body.landing table.vs td{padding:12px 10px;font-size:14px}
 body.landing table.vs td:first-child{padding-left:0}
-body.landing .toolrow{grid-template-columns:1fr;gap:22px;padding:32px 0}
-body.landing .toolrow.flip .vis{order:0}
+
 body.landing .why-grid{grid-template-columns:1fr}
 body.landing .why-item{padding:22px 0 4px}
 body.landing .why-item + .why-item{padding-left:0;border-left:0}
 body.landing .why-head{margin-bottom:26px}}
 @media (max-width:520px){body.landing .file{grid-template-columns:60px 1fr}
-body.landing .thumb, body.landing .thumb svg{width:60px;height:46px}
+body.landing .thumb, body.landing .thumbs .thumb svg{width:60px;height:46px}
 body.landing .dlbtn{grid-column:1/-1;justify-self:start}
 body.landing .show{box-shadow:9px 9px 0 var(--lime)}
 body.landing .floatpill{right:10px}
@@ -515,6 +518,3 @@ body.landing .navmenu a{color:var(--ink)}
 .pgcard .acts{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .pgcard .acts .btn{padding:6px 10px;font-size:13px}
 
-/* landing v6: fifteen tools — tab list in two columns so the hero stays compact */
-body.landing .tabs{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;margin:0 0 26px}
-@media (max-width:760px){body.landing .tabs{grid-template-columns:1fr}}
